@@ -7,6 +7,7 @@ import (
 	"log/slog"
 	"os"
 	"sync"
+	"sync/atomic"
 	"time"
 
 	"github.com/lewisdalwin/gatekeeper/internal/data"
@@ -35,6 +36,8 @@ type application struct {
 	wg           sync.WaitGroup
 	workerCancel context.CancelFunc
 	observers    *observationHub
+	activeSSE    atomic.Int64
+	peakSSE      atomic.Int64
 }
 
 func main() {

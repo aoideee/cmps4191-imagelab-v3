@@ -147,6 +147,10 @@ func (m JobModel) GetByPublicID(publicID string) (*Job, error) {
 		if errors.Is(err, sql.ErrNoRows) {
 			return nil, ErrRecordNotFound
 		}
+		var pgErr *pq.Error
+		if errors.As(err, &pgErr) && pgErr.Code == "22P02" {
+			return nil, ErrRecordNotFound
+		}
 		return nil, err
 	}
 

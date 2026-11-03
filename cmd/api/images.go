@@ -327,7 +327,13 @@ func (app *application) writeJobLookupError(w http.ResponseWriter, r *http.Reque
 }
 
 func (app *application) writeJobSnapshot(w http.ResponseWriter, r *http.Request, job *data.Job) {
-	response := envelope{
+	if err := app.writeJSON(w, http.StatusOK, jobSnapshot(job), nil); err != nil {
+		app.serverErrorResponse(w, r, err)
+	}
+}
+
+func jobSnapshot(job *data.Job) envelope {
+	return envelope{
 		"id":                 job.PublicID,
 		"image_id":           job.ImageID,
 		"status":             job.Status,
@@ -341,10 +347,6 @@ func (app *application) writeJobSnapshot(w http.ResponseWriter, r *http.Request,
 		"completed_at":       job.CompletedAt,
 		"failed_at":          job.FailedAt,
 		"error_message":      job.ErrorMessage,
-	}
-
-	if err := app.writeJSON(w, http.StatusOK, response, nil); err != nil {
-		app.serverErrorResponse(w, r, err)
 	}
 }
 

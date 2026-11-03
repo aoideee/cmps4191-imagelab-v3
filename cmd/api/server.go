@@ -13,12 +13,14 @@ import (
 
 func (app *application) serve() error {
 	srv := &http.Server{
-		Addr:        fmt.Sprintf(":%d", app.config.port),
-		Handler:     app.routes(),
-		IdleTimeout: time.Minute,
-		ReadTimeout: 5 * time.Second,
-		// Long polls may hold for 20 seconds before writing a response.
-		WriteTimeout: 25 * time.Second,
+		Addr:              fmt.Sprintf(":%d", app.config.port),
+		Handler:           app.routes(),
+		IdleTimeout:       time.Minute,
+		ReadHeaderTimeout: 5 * time.Second,
+		// WriteTimeout must remain disabled because an SSE response is
+		// intentionally long-lived. Individual non-streaming operations have
+		// their own bounded contexts.
+		WriteTimeout: 0,
 	}
 
 	shutdownError := make(chan error)
