@@ -2,19 +2,18 @@
 
 ImageLab is an asynchronous image-processing web application built with Go, PostgreSQL, and a vanilla JavaScript frontend.
 
-Work is accepted durably via `202 Accepted`, processed independently by an in-process background worker, and observed through selectable short or version-based long polling.
-
-Assessment 1 baseline: commit `663928a`. Assessment 2 development starts after that commit.
+Work is accepted durably via `202 Accepted`, processed independently by an in-process background worker, and observed through selectable short polling, version-based long polling, or Server-Sent Events (SSE).
 
 ---
 
 ## Core Architecture
 
-1. **Browser (Client)**: Selects, previews locally, submits the image once, and observes the durable job using either short or long polling.
+1. **Browser (Client)**: Selects, previews locally, submits the image once, and observes the durable job through short polling, long polling, or one reconnecting `EventSource`.
 2. **Go HTTP API**: Validates request and MIME types, stores original image files using server-controlled names, creates durable job records in PostgreSQL, and immediately acknowledges receipt with `202 Accepted`.
 3. **PostgreSQL**: Authoritative store for images, job lifecycles (`queued` → `processing` → `completed` / `failed`), timestamps, and variant metadata.
 4. **Background Worker**: Independently claims queued jobs using `FOR UPDATE SKIP LOCKED`, generates image variants, persists variant metadata, and updates job completion.
 5. **Local Filesystem**: Stores original uploaded images under `./uploads/` and generated variants.
+6. **Observation Hub**: Broadcasts post-commit wake-up hints to every in-process observer. Handlers re-read PostgreSQL before sending any snapshot.
 
 ---
 
@@ -160,6 +159,24 @@ Returns the current job state, timestamps, and completed variant metadata:
 - `wait` without `after`, malformed values, and `after` ahead of the server return `400`.
 - Observation responses use `Cache-Control: no-store`.
 
+### 4. SSE Observation (`GET /v1/jobs/{job_id}/events`)
+
+- An unknown job returns `404 Not Found` before streaming begins.
+- A valid request returns `text/event-stream; charset=utf-8`, `Cache-Control: no-cache`, and `X-Accel-Buffering: no`.
+- The first named `job-update` event contains the current complete snapshot.
+- Every post-commit notification causes an authoritative PostgreSQL re-read. A newer version is sent as another complete `job-update` snapshot.
+- Frames end with a blank line and flush immediately. Optional `: keep-alive` comments do not change job versions.
+- The server ends the stream after a completed or failed snapshot or when the request is cancelled.
+- Version numbers identify database snapshots. The API does not emit SSE `id` fields or provide `Last-Event-ID` replay.
+
+Example frame:
+
+```text
+event: job-update
+data: {"id":"...","status":"processing","version":3,"stage":"thumbnail_ready","variants_completed":1,...}
+
+```
+
 ---
 
 ## CLI Testing with curl
@@ -215,7 +232,8 @@ The tests create disposable PostgreSQL instances and temporary upload
 folders. They do not use the application's existing database or `.envrc`.
 
 They cover upload acceptance, job timestamps, variant persistence,
-database constraints, and variant downloads.
+database constraints, variant downloads, long-poll fan-out, SSE framing,
+unknown-job handling, terminal cleanup, and multiple SSE observers.
 
 See [upload testing](docs/upload-testing.md) for acceptance-test details.
 
@@ -242,17 +260,19 @@ To run with a different delay:
 go run ./cmd/api -db-dsn="$GATEKEEPER_DB_DSN"
 ```
 
-Choose **Short polling** or **Long polling** before submission. Changing the
-mode during an active job cancels the old observation only, fetches a fresh
-prompt snapshot, and continues with the same job. Short polling waits about
-one second after each active response. Long polling immediately continues
-after a newer `200` or normal `204`. Both modes stop on terminal state or a
-genuine retrieval error.
+Choose **Short polling**, **Long polling**, or **Server-Sent Events** before
+submission. Changing mode during an active job stops only the current
+observer and continues with the same job. Short polling waits about one second
+between active responses. Long polling immediately continues after a newer
+`200` or normal `204`. SSE keeps one response open, uses the same renderer,
+and lets the same `EventSource` reconnect after interruption. Every mode stops
+on terminal state. **Stop observing** closes the observer without cancelling
+the worker; **Resume observation** retrieves the current snapshot for that job.
 
 After a retrieval error, Try again observes the same job without
 resubmitting the image.
 
-## Assessment 2 experiment controls
+## Assessment 3 experiment controls
 
 The worker logs the active configuration at startup. All controls are off by
 default except the 10-second phase duration, which has no effect until an
@@ -262,11 +282,10 @@ interval is supplied.
 # A: 30-second quiet job, no intermediate simulated updates
 go run ./cmd/api -db-dsn="$GATEKEEPER_DB_DSN" -job-delay=30s
 
-# C1: 10-second simulated phase, update every 2 seconds
-go run ./cmd/api -db-dsn="$GATEKEEPER_DB_DSN" \
-  -simulation-interval=2s -simulation-duration=10s
+# B: ordinary real processing
+go run ./cmd/api -db-dsn="$GATEKEEPER_DB_DSN"
 
-# C2/C3: 10-second simulated phase, update every 200 ms
+# C: 10-second simulated phase, update every 200 ms
 go run ./cmd/api -db-dsn="$GATEKEEPER_DB_DSN" \
   -simulation-interval=200ms -simulation-duration=10s
 ```
@@ -281,11 +300,16 @@ request starts, `200`/`204` receipts, cancellations, errors, received versions,
 and rendering time. Server logs record each committed version and its actual
 post-commit wall-clock timestamp.
 
-See [Assessment 2 handoff](docs/assessment-2-handoff.md) for the deliberately
-uncompleted experiment, analysis, chart, report, and video work.
+See the [Assessment 3 evidence package](docs/assessment-3/README.md) for the 18
+measured runs, raw logs, tables, graphs, report, and exact reproduction steps.
 
 ## Assessment documentation
 
+- [Assessment 3 evidence and reproduction](docs/assessment-3/README.md)
+- [Assessment 3 report](docs/assessment-3/report.md)
+- [Assessment 3 browser presentation](docs/assessment-3/presentation.html)
+- [Assessment 3 run table](docs/assessment-3/runs.csv)
+- [Assessment 3 summary table](docs/assessment-3/summary.csv)
 - [Acceptance checklist](docs/acceptance-checklist.md)
 - [Measurement procedure](docs/measurement-testing.md)
 - [Recorded measurements](docs/measurements.csv)
@@ -293,14 +317,15 @@ uncompleted experiment, analysis, chart, report, and video work.
 - [Demonstration script](docs/demo-script.md)
 - [Week 4 check-in](CHECKIN.md)
 
-## Version 1 boundaries
+## Deployment boundaries
 
 Selecting another image cancels browser observation, not server work.
 Frontend submission protection does not prevent duplicate requests
 across different tabs or clients.
 
-The application uses local file storage, one in-process worker, and selectable
-short or long polling. Server push and automatic retries after genuine
-retrieval failures are not implemented.
+The application uses local file storage, one in-process worker, and an
+in-process observation hub. It does not provide multi-server fan-out, a
+durable event history, `Last-Event-ID` replay, WebSockets, or exactly-once
+delivery. PostgreSQL snapshots remain authoritative.
 
 Keep `.envrc` and uploaded/generated image files out of version control.

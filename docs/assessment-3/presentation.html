@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ImageLab Version 3: SSE</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #07111f; color: #f8fafc; overflow: hidden; }
+      .slide { display: none; width: 100vw; height: 100vh; padding: 6vh 7vw; background: radial-gradient(circle at 90% 5%, #143b67 0, transparent 35%), #07111f; }
+      .slide.active { display: flex; flex-direction: column; }
+      h1 { max-width: 1000px; margin: auto 0 0; font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: 0.98; letter-spacing: -0.05em; }
+      h2 { margin: 0 0 4vh; font-size: clamp(2.2rem, 4vw, 4rem); line-height: 1.05; letter-spacing: -0.035em; }
+      h3 { margin: 0 0 0.5rem; color: #93c5fd; font-size: 1.45rem; }
+      p, li, td, th { font-size: clamp(1.15rem, 1.7vw, 1.7rem); line-height: 1.45; }
+      ul, ol { max-width: 1050px; margin: 0; padding-left: 1.5em; }
+      li + li { margin-top: 1rem; }
+      .subtitle { max-width: 900px; margin: 2rem 0 auto; color: #bfdbfe; font-size: clamp(1.4rem, 2.2vw, 2.2rem); }
+      .eyebrow { color: #60a5fa; font-size: 1rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+      .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; align-items: start; }
+      .steps { display: grid; grid-template-columns: 4rem 1fr; gap: 1.4rem 1.5rem; max-width: 1100px; }
+      .number { display: grid; place-items: center; width: 3.2rem; height: 3.2rem; border: 2px solid #60a5fa; border-radius: 50%; color: #93c5fd; font-size: 1.4rem; font-weight: 800; }
+      .steps p { margin: 0; }
+      pre { margin: 1rem 0; padding: 2rem; overflow: hidden; border-left: 6px solid #60a5fa; background: #020617; color: #dbeafe; font: 1.35rem/1.55 ui-monospace, SFMono-Regular, monospace; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { padding: 0.8rem 1rem; border-bottom: 1px solid #334155; text-align: left; }
+      th { color: #93c5fd; font-weight: 700; }
+      .chart { flex: 1; width: 100%; min-height: 0; object-fit: contain; background: white; }
+      .takeaway { margin: 1.4rem 0 0; color: #bfdbfe; font-weight: 650; }
+      .footer { margin-top: auto; display: flex; justify-content: space-between; color: #64748b; font-size: 0.95rem; }
+      .accent { color: #60a5fa; }
+      .controls { position: fixed; right: 1.5rem; bottom: 1.25rem; z-index: 20; display: flex; gap: 0.6rem; }
+      button { border: 1px solid #475569; border-radius: 999px; padding: 0.55rem 0.9rem; background: #0f172a; color: #e2e8f0; font: inherit; cursor: pointer; }
+      @media (max-width: 800px) { .columns { grid-template-columns: 1fr; } .slide { overflow: auto; } }
+      @media print { body { overflow: visible; } .slide { display: flex; break-after: page; } .controls { display: none; } }
+    </style>
+  </head>
+  <body>
+    <section class="slide active">
+      <span class="eyebrow">CMPS 4191 · ImageLab Assessment 3</span>
+      <h1>Versioned job observation with <span class="accent">Server-Sent Events</span></h1>
+      <p class="subtitle">Implementation, controlled comparison with long polling, and evidence from 18 measured runs</p>
+      <div class="footer"><span>Tysha Daniels</span><span>ImageLab Version 3</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>The contract stays centered on PostgreSQL</h2>
+      <div class="columns">
+        <div>
+          <h3>Preserved</h3>
+          <ul>
+            <li>One upload returns <code>202 Accepted</code> and a durable job</li>
+            <li>One worker creates thumbnail, preview, and display variants</li>
+            <li>Queued, processing, completed, and failed remain the four states</li>
+            <li>Short polling and long polling still work</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Added</h3>
+          <ul>
+            <li>One SSE response carries the current snapshot and later versions</li>
+            <li>Post-commit notifications wake every active observer</li>
+            <li>Each handler re-reads PostgreSQL before sending</li>
+            <li>Disconnecting observation never cancels processing</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer"><span>Scope</span><span>2 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>Committed change to browser update</h2>
+      <div class="steps">
+        <span class="number">1</span><p>The worker commits a new client-visible version in the same database transaction as the state or progress change.</p>
+        <span class="number">2</span><p>After commit, the worker broadcasts a wake-up hint through the in-process observation hub.</p>
+        <span class="number">3</span><p>Every subscribed SSE handler wakes and reads the latest complete snapshot from PostgreSQL.</p>
+        <span class="number">4</span><p>The handler sends a newer version, flushes the frame, and keeps the response open unless the job is terminal.</p>
+      </div>
+      <p class="takeaway">The notification carries no authoritative job data. PostgreSQL remains the source of truth.</p>
+      <div class="footer"><span>Server lifecycle</span><span>3 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>The SSE route and frame</h2>
+      <pre>GET /v1/jobs/{id}/events
+Content-Type: text/event-stream; charset=utf-8
+Cache-Control: no-cache
+X-Accel-Buffering: no
+
+event: job-update
+data: {"id":"…","status":"processing","version":3,
+       "stage":"thumbnail_ready","variants_completed":1,…}
+
+</pre>
+      <ul>
+        <li>An unknown job returns 404 before streaming begins.</li>
+        <li>The blank line completes the frame. Flush makes it available without ending the response.</li>
+        <li>No SSE <code>id</code> field is sent. Snapshot versions do not promise event-history replay.</li>
+      </ul>
+      <div class="footer"><span>HTTP contract</span><span>4 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>One EventSource owns the browser lifecycle</h2>
+      <div class="columns">
+        <ol>
+          <li>Open one <code>EventSource</code> for the accepted job.</li>
+          <li>Parse each named <code>job-update</code> and pass it to the shared renderer.</li>
+          <li>On error, show “reconnecting” and keep the same object.</li>
+          <li>On completed or failed, render once and call <code>close()</code>.</li>
+        </ol>
+        <div>
+          <h3>Stop and resume</h3>
+          <p><strong>Stop observing</strong> closes the browser stream only. The worker keeps running.</p>
+          <p><strong>Resume observation</strong> opens a new stream for the same job. Its initial event recovers current state.</p>
+        </div>
+      </div>
+      <div class="footer"><span>Browser lifecycle</span><span>5 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>Controlled comparison: 18 runs</h2>
+      <table>
+        <thead><tr><th>Condition</th><th>Workload</th><th>Prediction</th></tr></thead>
+        <tbody>
+          <tr><td>A: quiet</td><td>30 seconds without visible progress</td><td>SSE stays at one GET; long polling crosses its 20-second deadline</td></tr>
+          <tr><td>B: real</td><td>Three real variant commits</td><td>Similar delay; long polling opens a GET after each snapshot</td></tr>
+          <tr><td>C: frequent</td><td>10 seconds at 200 ms, then real work</td><td>SSE request count stays flat; long-poll count follows observed versions</td></tr>
+        </tbody>
+      </table>
+      <p class="takeaway">Same PNG and transformations, one observer, one worker, empty queue, three repetitions, alternating method order.</p>
+      <div class="footer"><span>Method</span><span>6 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>Request count separates as updates increase</h2>
+      <img class="chart" src="graphs/observation-get-count.svg" alt="Observation GET count by condition and method" />
+      <p class="takeaway">SSE used 1 GET in every run. Long polling used 6, 5, and 55 GETs in conditions A, B, and C.</p>
+      <div class="footer"><span>Measured results</span><span>7 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>Local terminal detection stayed comparable</h2>
+      <img class="chart" src="graphs/completion-detection-delay.svg" alt="Completion detection delay by condition and method" />
+      <p class="takeaway">All medians were 3–4 ms. The 2–7 ms observed range does not establish a latency advantage.</p>
+      <div class="footer"><span>Measured results</span><span>8 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>Fewer requests do not equal free observation</h2>
+      <table>
+        <thead><tr><th>Condition</th><th>SSE work</th><th>Long-poll work</th></tr></thead>
+        <tbody>
+          <tr><td>A</td><td>30.2–30.4 s held stream, 2 heartbeats, 5 DB reads</td><td>6 GETs, 11 DB reads</td></tr>
+          <tr><td>B</td><td>0.2 s held stream, 5 events, 5 DB reads</td><td>5 GETs, 9 DB reads</td></tr>
+          <tr><td>C</td><td>10.2 s held stream, 55 events, 55 DB reads</td><td>55 GETs, 109 DB reads</td></tr>
+        </tbody>
+      </table>
+      <p class="takeaway">The experiment did not measure TCP connections, production memory limits, or multi-server capacity.</p>
+      <div class="footer"><span>Interpretation</span><span>9 / 10</span></div>
+    </section>
+
+    <section class="slide">
+      <h2>Recommendation and questions</h2>
+      <div class="columns">
+        <div>
+          <h3>Recommendation</h3>
+          <p>Use SSE as the default observer for this single-process ImageLab deployment. Keep long polling as a compatible fallback and short polling as a baseline.</p>
+          <h3>Limits</h3>
+          <p>One local machine, one observer, three repetitions, no network throttling, and no multi-server fan-out.</p>
+        </div>
+        <div>
+          <h3>Questions to be ready for</h3>
+          <ul>
+            <li>What stays open, and what does Flush do?</li>
+            <li>How does every tab receive a committed change?</li>
+            <li>What changes after a disconnect?</li>
+            <li>Why can versions skip without losing current state?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer"><span>Conclusion</span><span>10 / 10</span></div>
+    </section>
+
+    <div class="controls">
+      <button id="previous" type="button" aria-label="Previous slide">←</button>
+      <button id="next" type="button" aria-label="Next slide">→</button>
+    </div>
+    <script>
+      const slides = [...document.querySelectorAll(".slide")];
+      let current = 0;
+      function show(index) {
+        slides[current].classList.remove("active");
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add("active");
+        location.hash = `slide-${current + 1}`;
+      }
+      document.getElementById("previous").addEventListener("click", () => show(current - 1));
+      document.getElementById("next").addEventListener("click", () => show(current + 1));
+      addEventListener("keydown", (event) => {
+        if (["ArrowRight", "PageDown", " "].includes(event.key)) show(current + 1);
+        if (["ArrowLeft", "PageUp"].includes(event.key)) show(current - 1);
+        if (event.key === "Home") show(0);
+        if (event.key === "End") show(slides.length - 1);
+      });
+      const requested = Number(location.hash.replace("#slide-", ""));
+      if (requested >= 1 && requested <= slides.length) show(requested - 1);
+    </script>
+  </body>
+</html>

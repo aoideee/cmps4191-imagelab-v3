@@ -1,0 +1,675 @@
+time=2026-11-03T13:27:30.170-06:00 level=INFO msg="database connection pool established"
+time=2026-11-03T13:27:30.170-06:00 level=INFO msg="experiment configuration" quiet_delay=0s simulation_interval=200ms simulation_duration=10s
+time=2026-11-03T13:27:30.170-06:00 level=INFO msg="starting server" addr=:4000 env=development
+2026/11/03 13:27:35 Method: POST URL: /v1/images
+2026/11/03 13:27:35 Method: GET URL: /v1/jobs/4fb44596-07e3-46c5-a9ce-8c83d37508f0/events
+time=2026-11-03T13:27:35.174-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=2 status=processing stage=starting variants_completed=0 committed_at=2026-11-03T19:27:35.174515263Z
+time=2026-11-03T13:27:35.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=3 status=processing stage=starting simulation_step=1 variants_completed=0 committed_at=2026-11-03T19:27:35.3763625Z
+time=2026-11-03T13:27:35.577-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=4 status=processing stage=starting simulation_step=2 variants_completed=0 committed_at=2026-11-03T19:27:35.577171784Z
+time=2026-11-03T13:27:35.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=5 status=processing stage=starting simulation_step=3 variants_completed=0 committed_at=2026-11-03T19:27:35.776368194Z
+time=2026-11-03T13:27:35.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=6 status=processing stage=starting simulation_step=4 variants_completed=0 committed_at=2026-11-03T19:27:35.976148743Z
+time=2026-11-03T13:27:36.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=7 status=processing stage=starting simulation_step=5 variants_completed=0 committed_at=2026-11-03T19:27:36.17622185Z
+time=2026-11-03T13:27:36.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=8 status=processing stage=starting simulation_step=6 variants_completed=0 committed_at=2026-11-03T19:27:36.376399131Z
+time=2026-11-03T13:27:36.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=9 status=processing stage=starting simulation_step=7 variants_completed=0 committed_at=2026-11-03T19:27:36.576569637Z
+time=2026-11-03T13:27:36.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=10 status=processing stage=starting simulation_step=8 variants_completed=0 committed_at=2026-11-03T19:27:36.776493542Z
+time=2026-11-03T13:27:36.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=11 status=processing stage=starting simulation_step=9 variants_completed=0 committed_at=2026-11-03T19:27:36.976529286Z
+time=2026-11-03T13:27:37.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=12 status=processing stage=starting simulation_step=10 variants_completed=0 committed_at=2026-11-03T19:27:37.176813282Z
+time=2026-11-03T13:27:37.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=13 status=processing stage=starting simulation_step=11 variants_completed=0 committed_at=2026-11-03T19:27:37.376536155Z
+time=2026-11-03T13:27:37.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=14 status=processing stage=starting simulation_step=12 variants_completed=0 committed_at=2026-11-03T19:27:37.576633878Z
+time=2026-11-03T13:27:37.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=15 status=processing stage=starting simulation_step=13 variants_completed=0 committed_at=2026-11-03T19:27:37.776458879Z
+time=2026-11-03T13:27:37.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=16 status=processing stage=starting simulation_step=14 variants_completed=0 committed_at=2026-11-03T19:27:37.976508998Z
+time=2026-11-03T13:27:38.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=17 status=processing stage=starting simulation_step=15 variants_completed=0 committed_at=2026-11-03T19:27:38.176290712Z
+time=2026-11-03T13:27:38.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=18 status=processing stage=starting simulation_step=16 variants_completed=0 committed_at=2026-11-03T19:27:38.376789799Z
+time=2026-11-03T13:27:38.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=19 status=processing stage=starting simulation_step=17 variants_completed=0 committed_at=2026-11-03T19:27:38.576312412Z
+time=2026-11-03T13:27:38.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=20 status=processing stage=starting simulation_step=18 variants_completed=0 committed_at=2026-11-03T19:27:38.776312651Z
+time=2026-11-03T13:27:38.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=21 status=processing stage=starting simulation_step=19 variants_completed=0 committed_at=2026-11-03T19:27:38.976626088Z
+time=2026-11-03T13:27:39.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=22 status=processing stage=starting simulation_step=20 variants_completed=0 committed_at=2026-11-03T19:27:39.176879903Z
+time=2026-11-03T13:27:39.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=23 status=processing stage=starting simulation_step=21 variants_completed=0 committed_at=2026-11-03T19:27:39.376515576Z
+time=2026-11-03T13:27:39.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=24 status=processing stage=starting simulation_step=22 variants_completed=0 committed_at=2026-11-03T19:27:39.576406538Z
+time=2026-11-03T13:27:39.777-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=25 status=processing stage=starting simulation_step=23 variants_completed=0 committed_at=2026-11-03T19:27:39.777252173Z
+time=2026-11-03T13:27:39.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=26 status=processing stage=starting simulation_step=24 variants_completed=0 committed_at=2026-11-03T19:27:39.976233529Z
+time=2026-11-03T13:27:40.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=27 status=processing stage=starting simulation_step=25 variants_completed=0 committed_at=2026-11-03T19:27:40.176525417Z
+time=2026-11-03T13:27:40.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=28 status=processing stage=starting simulation_step=26 variants_completed=0 committed_at=2026-11-03T19:27:40.3761755Z
+time=2026-11-03T13:27:40.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=29 status=processing stage=starting simulation_step=27 variants_completed=0 committed_at=2026-11-03T19:27:40.576807614Z
+time=2026-11-03T13:27:40.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=30 status=processing stage=starting simulation_step=28 variants_completed=0 committed_at=2026-11-03T19:27:40.776192856Z
+time=2026-11-03T13:27:40.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=31 status=processing stage=starting simulation_step=29 variants_completed=0 committed_at=2026-11-03T19:27:40.976516129Z
+time=2026-11-03T13:27:41.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=32 status=processing stage=starting simulation_step=30 variants_completed=0 committed_at=2026-11-03T19:27:41.176533337Z
+time=2026-11-03T13:27:41.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=33 status=processing stage=starting simulation_step=31 variants_completed=0 committed_at=2026-11-03T19:27:41.376675755Z
+time=2026-11-03T13:27:41.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=34 status=processing stage=starting simulation_step=32 variants_completed=0 committed_at=2026-11-03T19:27:41.576459662Z
+time=2026-11-03T13:27:41.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=35 status=processing stage=starting simulation_step=33 variants_completed=0 committed_at=2026-11-03T19:27:41.776386921Z
+time=2026-11-03T13:27:41.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=36 status=processing stage=starting simulation_step=34 variants_completed=0 committed_at=2026-11-03T19:27:41.976644297Z
+time=2026-11-03T13:27:42.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=37 status=processing stage=starting simulation_step=35 variants_completed=0 committed_at=2026-11-03T19:27:42.176442005Z
+time=2026-11-03T13:27:42.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=38 status=processing stage=starting simulation_step=36 variants_completed=0 committed_at=2026-11-03T19:27:42.376677463Z
+time=2026-11-03T13:27:42.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=39 status=processing stage=starting simulation_step=37 variants_completed=0 committed_at=2026-11-03T19:27:42.576849708Z
+time=2026-11-03T13:27:42.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=40 status=processing stage=starting simulation_step=38 variants_completed=0 committed_at=2026-11-03T19:27:42.776617791Z
+time=2026-11-03T13:27:42.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=41 status=processing stage=starting simulation_step=39 variants_completed=0 committed_at=2026-11-03T19:27:42.97671289Z
+time=2026-11-03T13:27:43.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=42 status=processing stage=starting simulation_step=40 variants_completed=0 committed_at=2026-11-03T19:27:43.176014831Z
+time=2026-11-03T13:27:43.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=43 status=processing stage=starting simulation_step=41 variants_completed=0 committed_at=2026-11-03T19:27:43.37654757Z
+time=2026-11-03T13:27:43.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=44 status=processing stage=starting simulation_step=42 variants_completed=0 committed_at=2026-11-03T19:27:43.57604663Z
+time=2026-11-03T13:27:43.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=45 status=processing stage=starting simulation_step=43 variants_completed=0 committed_at=2026-11-03T19:27:43.776686246Z
+time=2026-11-03T13:27:43.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=46 status=processing stage=starting simulation_step=44 variants_completed=0 committed_at=2026-11-03T19:27:43.976259277Z
+time=2026-11-03T13:27:44.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=47 status=processing stage=starting simulation_step=45 variants_completed=0 committed_at=2026-11-03T19:27:44.176146058Z
+time=2026-11-03T13:27:44.376-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=48 status=processing stage=starting simulation_step=46 variants_completed=0 committed_at=2026-11-03T19:27:44.376195666Z
+time=2026-11-03T13:27:44.576-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=49 status=processing stage=starting simulation_step=47 variants_completed=0 committed_at=2026-11-03T19:27:44.576429617Z
+time=2026-11-03T13:27:44.776-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=50 status=processing stage=starting simulation_step=48 variants_completed=0 committed_at=2026-11-03T19:27:44.776702544Z
+time=2026-11-03T13:27:44.976-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=51 status=processing stage=starting simulation_step=49 variants_completed=0 committed_at=2026-11-03T19:27:44.976496278Z
+time=2026-11-03T13:27:45.176-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=52 status=processing stage=starting simulation_step=50 variants_completed=0 committed_at=2026-11-03T19:27:45.176911831Z
+time=2026-11-03T13:27:45.220-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=53 status=processing stage=thumbnail_ready variants_completed=1 committed_at=2026-11-03T19:27:45.220479948Z
+time=2026-11-03T13:27:45.277-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=54 status=processing stage=preview_ready variants_completed=2 committed_at=2026-11-03T19:27:45.27797952Z
+time=2026-11-03T13:27:45.357-06:00 level=INFO msg="image job change committed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 version=55 status=completed stage=display_ready variants_completed=3 committed_at=2026-11-03T19:27:45.357829297Z
+time=2026-11-03T13:27:45.357-06:00 level=INFO msg="image processing job completed" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0
+time=2026-11-03T13:27:45.358-06:00 level=INFO msg="SSE stream ended" job_id=4fb44596-07e3-46c5-a9ce-8c83d37508f0 database_reads=55 job_events=55 heartbeats=0 stream_ms=10294 peak_active_streams=1
+2026/11/03 13:27:45 Method: POST URL: /v1/images
+2026/11/03 13:27:45 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:45.387-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=prompt database_reads=1
+2026/11/03 13:27:45 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:45.424-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=2 status=processing stage=starting variants_completed=0 committed_at=2026-11-03T19:27:45.424241783Z
+time=2026-11-03T13:27:45.425-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:45 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:45.625-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=3 status=processing stage=starting simulation_step=1 variants_completed=0 committed_at=2026-11-03T19:27:45.625689183Z
+time=2026-11-03T13:27:45.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:45 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:45.824-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=4 status=processing stage=starting simulation_step=2 variants_completed=0 committed_at=2026-11-03T19:27:45.824817634Z
+time=2026-11-03T13:27:45.825-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:45 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:46.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=5 status=processing stage=starting simulation_step=3 variants_completed=0 committed_at=2026-11-03T19:27:46.026554951Z
+time=2026-11-03T13:27:46.027-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:46 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:46.225-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=6 status=processing stage=starting simulation_step=4 variants_completed=0 committed_at=2026-11-03T19:27:46.225823949Z
+time=2026-11-03T13:27:46.227-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:46 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:46.425-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=7 status=processing stage=starting simulation_step=5 variants_completed=0 committed_at=2026-11-03T19:27:46.425855674Z
+time=2026-11-03T13:27:46.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:46 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:46.626-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=8 status=processing stage=starting simulation_step=6 variants_completed=0 committed_at=2026-11-03T19:27:46.626281151Z
+time=2026-11-03T13:27:46.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:46 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:46.826-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=9 status=processing stage=starting simulation_step=7 variants_completed=0 committed_at=2026-11-03T19:27:46.826077916Z
+time=2026-11-03T13:27:46.826-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:46 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:47.025-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=10 status=processing stage=starting simulation_step=8 variants_completed=0 committed_at=2026-11-03T19:27:47.025226148Z
+time=2026-11-03T13:27:47.025-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:47 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:47.226-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=11 status=processing stage=starting simulation_step=9 variants_completed=0 committed_at=2026-11-03T19:27:47.226014488Z
+time=2026-11-03T13:27:47.227-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:47 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:47.426-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=12 status=processing stage=starting simulation_step=10 variants_completed=0 committed_at=2026-11-03T19:27:47.426333024Z
+time=2026-11-03T13:27:47.427-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:47 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:47.625-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=13 status=processing stage=starting simulation_step=11 variants_completed=0 committed_at=2026-11-03T19:27:47.625898341Z
+time=2026-11-03T13:27:47.626-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:47 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:47.825-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=14 status=processing stage=starting simulation_step=12 variants_completed=0 committed_at=2026-11-03T19:27:47.82570708Z
+time=2026-11-03T13:27:47.827-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:47 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:48.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=15 status=processing stage=starting simulation_step=13 variants_completed=0 committed_at=2026-11-03T19:27:48.02649186Z
+time=2026-11-03T13:27:48.027-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:48 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:48.226-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=16 status=processing stage=starting simulation_step=14 variants_completed=0 committed_at=2026-11-03T19:27:48.226831885Z
+time=2026-11-03T13:27:48.228-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:48 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:48.425-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=17 status=processing stage=starting simulation_step=15 variants_completed=0 committed_at=2026-11-03T19:27:48.425780461Z
+time=2026-11-03T13:27:48.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:48 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:48.626-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=18 status=processing stage=starting simulation_step=16 variants_completed=0 committed_at=2026-11-03T19:27:48.626288449Z
+time=2026-11-03T13:27:48.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:48 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:48.825-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=19 status=processing stage=starting simulation_step=17 variants_completed=0 committed_at=2026-11-03T19:27:48.82582711Z
+time=2026-11-03T13:27:48.827-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:48 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:49.025-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=20 status=processing stage=starting simulation_step=18 variants_completed=0 committed_at=2026-11-03T19:27:49.025082126Z
+time=2026-11-03T13:27:49.025-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:49 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:49.226-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=21 status=processing stage=starting simulation_step=19 variants_completed=0 committed_at=2026-11-03T19:27:49.226614445Z
+time=2026-11-03T13:27:49.228-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:49 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:49.426-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=22 status=processing stage=starting simulation_step=20 variants_completed=0 committed_at=2026-11-03T19:27:49.426466812Z
+time=2026-11-03T13:27:49.427-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:49 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:49.625-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=23 status=processing stage=starting simulation_step=21 variants_completed=0 committed_at=2026-11-03T19:27:49.625651812Z
+time=2026-11-03T13:27:49.626-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:49 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:49.825-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=24 status=processing stage=starting simulation_step=22 variants_completed=0 committed_at=2026-11-03T19:27:49.825949753Z
+time=2026-11-03T13:27:49.826-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:49 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:50.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=25 status=processing stage=starting simulation_step=23 variants_completed=0 committed_at=2026-11-03T19:27:50.026384032Z
+time=2026-11-03T13:27:50.027-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:50 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:50.226-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=26 status=processing stage=starting simulation_step=24 variants_completed=0 committed_at=2026-11-03T19:27:50.226519992Z
+time=2026-11-03T13:27:50.227-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:50 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:50.425-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=27 status=processing stage=starting simulation_step=25 variants_completed=0 committed_at=2026-11-03T19:27:50.425910582Z
+time=2026-11-03T13:27:50.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:50 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:50.625-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=28 status=processing stage=starting simulation_step=26 variants_completed=0 committed_at=2026-11-03T19:27:50.625945121Z
+time=2026-11-03T13:27:50.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:50 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:50.826-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=29 status=processing stage=starting simulation_step=27 variants_completed=0 committed_at=2026-11-03T19:27:50.825990954Z
+time=2026-11-03T13:27:50.827-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:50 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:51.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=30 status=processing stage=starting simulation_step=28 variants_completed=0 committed_at=2026-11-03T19:27:51.026752685Z
+time=2026-11-03T13:27:51.028-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:51 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:51.225-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=31 status=processing stage=starting simulation_step=29 variants_completed=0 committed_at=2026-11-03T19:27:51.225918322Z
+time=2026-11-03T13:27:51.226-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:51 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:51.426-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=32 status=processing stage=starting simulation_step=30 variants_completed=0 committed_at=2026-11-03T19:27:51.426131317Z
+time=2026-11-03T13:27:51.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:51 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:51.625-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=33 status=processing stage=starting simulation_step=31 variants_completed=0 committed_at=2026-11-03T19:27:51.625749153Z
+time=2026-11-03T13:27:51.626-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:51 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:51.825-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=34 status=processing stage=starting simulation_step=32 variants_completed=0 committed_at=2026-11-03T19:27:51.825579027Z
+time=2026-11-03T13:27:51.826-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:51 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:52.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=35 status=processing stage=starting simulation_step=33 variants_completed=0 committed_at=2026-11-03T19:27:52.026346149Z
+time=2026-11-03T13:27:52.027-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:52 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:52.225-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=36 status=processing stage=starting simulation_step=34 variants_completed=0 committed_at=2026-11-03T19:27:52.22535555Z
+time=2026-11-03T13:27:52.226-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:52 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:52.425-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=37 status=processing stage=starting simulation_step=35 variants_completed=0 committed_at=2026-11-03T19:27:52.425634711Z
+time=2026-11-03T13:27:52.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:52 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:52.626-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=38 status=processing stage=starting simulation_step=36 variants_completed=0 committed_at=2026-11-03T19:27:52.626157819Z
+time=2026-11-03T13:27:52.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:52 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:52.826-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=39 status=processing stage=starting simulation_step=37 variants_completed=0 committed_at=2026-11-03T19:27:52.82601091Z
+time=2026-11-03T13:27:52.827-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:52 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:53.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=40 status=processing stage=starting simulation_step=38 variants_completed=0 committed_at=2026-11-03T19:27:53.026390185Z
+time=2026-11-03T13:27:53.027-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:53 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:53.226-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=41 status=processing stage=starting simulation_step=39 variants_completed=0 committed_at=2026-11-03T19:27:53.226474816Z
+time=2026-11-03T13:27:53.227-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:53 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:53.426-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=42 status=processing stage=starting simulation_step=40 variants_completed=0 committed_at=2026-11-03T19:27:53.426753042Z
+time=2026-11-03T13:27:53.428-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:53 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:53.626-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=43 status=processing stage=starting simulation_step=41 variants_completed=0 committed_at=2026-11-03T19:27:53.626434487Z
+time=2026-11-03T13:27:53.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:53 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:53.825-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=44 status=processing stage=starting simulation_step=42 variants_completed=0 committed_at=2026-11-03T19:27:53.825876594Z
+time=2026-11-03T13:27:53.827-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:53 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:54.025-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=45 status=processing stage=starting simulation_step=43 variants_completed=0 committed_at=2026-11-03T19:27:54.025849969Z
+time=2026-11-03T13:27:54.027-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:54 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:54.226-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=46 status=processing stage=starting simulation_step=44 variants_completed=0 committed_at=2026-11-03T19:27:54.226276139Z
+time=2026-11-03T13:27:54.227-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:54 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:54.425-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=47 status=processing stage=starting simulation_step=45 variants_completed=0 committed_at=2026-11-03T19:27:54.425648998Z
+time=2026-11-03T13:27:54.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:54 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:54.626-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=48 status=processing stage=starting simulation_step=46 variants_completed=0 committed_at=2026-11-03T19:27:54.626477473Z
+time=2026-11-03T13:27:54.627-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:54 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:54.826-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=49 status=processing stage=starting simulation_step=47 variants_completed=0 committed_at=2026-11-03T19:27:54.826103646Z
+time=2026-11-03T13:27:54.827-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:54 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.026-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=50 status=processing stage=starting simulation_step=48 variants_completed=0 committed_at=2026-11-03T19:27:55.026902866Z
+time=2026-11-03T13:27:55.028-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.225-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=51 status=processing stage=starting simulation_step=49 variants_completed=0 committed_at=2026-11-03T19:27:55.225834917Z
+time=2026-11-03T13:27:55.226-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.425-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=52 status=processing stage=starting simulation_step=50 variants_completed=0 committed_at=2026-11-03T19:27:55.425694508Z
+time=2026-11-03T13:27:55.426-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.475-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=53 status=processing stage=thumbnail_ready variants_completed=1 committed_at=2026-11-03T19:27:55.475217915Z
+time=2026-11-03T13:27:55.475-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.528-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=54 status=processing stage=preview_ready variants_completed=2 committed_at=2026-11-03T19:27:55.528677055Z
+time=2026-11-03T13:27:55.529-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.602-06:00 level=INFO msg="image job change committed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 version=55 status=completed stage=display_ready variants_completed=3 committed_at=2026-11-03T19:27:55.602217488Z
+time=2026-11-03T13:27:55.602-06:00 level=INFO msg="image processing job completed" job_id=fdf8c872-8e00-42a6-9885-114c0f934548
+time=2026-11-03T13:27:55.602-06:00 level=INFO msg="job observation read" job_id=fdf8c872-8e00-42a6-9885-114c0f934548 mode=long database_reads=2
+2026/11/03 13:27:55 Method: POST URL: /v1/images
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:55.631-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=prompt database_reads=1
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:55.673-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=2 status=processing stage=starting variants_completed=0 committed_at=2026-11-03T19:27:55.673921177Z
+time=2026-11-03T13:27:55.675-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:55.876-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=3 status=processing stage=starting simulation_step=1 variants_completed=0 committed_at=2026-11-03T19:27:55.876117041Z
+time=2026-11-03T13:27:55.876-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:55 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:56.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=4 status=processing stage=starting simulation_step=2 variants_completed=0 committed_at=2026-11-03T19:27:56.075478103Z
+time=2026-11-03T13:27:56.075-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:56 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:56.275-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=5 status=processing stage=starting simulation_step=3 variants_completed=0 committed_at=2026-11-03T19:27:56.275361769Z
+time=2026-11-03T13:27:56.277-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:56 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:56.475-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=6 status=processing stage=starting simulation_step=4 variants_completed=0 committed_at=2026-11-03T19:27:56.475930746Z
+time=2026-11-03T13:27:56.476-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:56 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:56.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=7 status=processing stage=starting simulation_step=5 variants_completed=0 committed_at=2026-11-03T19:27:56.675550289Z
+time=2026-11-03T13:27:56.676-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:56 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:56.875-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=8 status=processing stage=starting simulation_step=6 variants_completed=0 committed_at=2026-11-03T19:27:56.87562748Z
+time=2026-11-03T13:27:56.877-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:56 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:57.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=9 status=processing stage=starting simulation_step=7 variants_completed=0 committed_at=2026-11-03T19:27:57.075127207Z
+time=2026-11-03T13:27:57.075-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:57 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:57.275-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=10 status=processing stage=starting simulation_step=8 variants_completed=0 committed_at=2026-11-03T19:27:57.275911987Z
+time=2026-11-03T13:27:57.276-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:57 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:57.476-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=11 status=processing stage=starting simulation_step=9 variants_completed=0 committed_at=2026-11-03T19:27:57.476137529Z
+time=2026-11-03T13:27:57.477-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:57 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:57.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=12 status=processing stage=starting simulation_step=10 variants_completed=0 committed_at=2026-11-03T19:27:57.675397859Z
+time=2026-11-03T13:27:57.676-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:57 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:57.875-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=13 status=processing stage=starting simulation_step=11 variants_completed=0 committed_at=2026-11-03T19:27:57.875728153Z
+time=2026-11-03T13:27:57.877-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:57 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:58.076-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=14 status=processing stage=starting simulation_step=12 variants_completed=0 committed_at=2026-11-03T19:27:58.076285233Z
+time=2026-11-03T13:27:58.077-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:58 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:58.276-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=15 status=processing stage=starting simulation_step=13 variants_completed=0 committed_at=2026-11-03T19:27:58.276400975Z
+time=2026-11-03T13:27:58.277-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:58 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:58.475-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=16 status=processing stage=starting simulation_step=14 variants_completed=0 committed_at=2026-11-03T19:27:58.475704655Z
+time=2026-11-03T13:27:58.476-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:58 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:58.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=17 status=processing stage=starting simulation_step=15 variants_completed=0 committed_at=2026-11-03T19:27:58.675979681Z
+time=2026-11-03T13:27:58.677-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:58 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:58.876-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=18 status=processing stage=starting simulation_step=16 variants_completed=0 committed_at=2026-11-03T19:27:58.876101836Z
+time=2026-11-03T13:27:58.877-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:58 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:59.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=19 status=processing stage=starting simulation_step=17 variants_completed=0 committed_at=2026-11-03T19:27:59.075486882Z
+time=2026-11-03T13:27:59.076-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:59 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:59.276-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=20 status=processing stage=starting simulation_step=18 variants_completed=0 committed_at=2026-11-03T19:27:59.276205766Z
+time=2026-11-03T13:27:59.277-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:59 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:59.475-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=21 status=processing stage=starting simulation_step=19 variants_completed=0 committed_at=2026-11-03T19:27:59.475659123Z
+time=2026-11-03T13:27:59.477-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:59 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:59.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=22 status=processing stage=starting simulation_step=20 variants_completed=0 committed_at=2026-11-03T19:27:59.675506023Z
+time=2026-11-03T13:27:59.676-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:59 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:27:59.876-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=23 status=processing stage=starting simulation_step=21 variants_completed=0 committed_at=2026-11-03T19:27:59.876548042Z
+time=2026-11-03T13:27:59.877-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:27:59 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:00.076-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=24 status=processing stage=starting simulation_step=22 variants_completed=0 committed_at=2026-11-03T19:28:00.076096236Z
+time=2026-11-03T13:28:00.077-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:00 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:00.275-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=25 status=processing stage=starting simulation_step=23 variants_completed=0 committed_at=2026-11-03T19:28:00.275607749Z
+time=2026-11-03T13:28:00.276-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:00 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:00.475-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=26 status=processing stage=starting simulation_step=24 variants_completed=0 committed_at=2026-11-03T19:28:00.475313779Z
+time=2026-11-03T13:28:00.476-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:00 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:00.676-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=27 status=processing stage=starting simulation_step=25 variants_completed=0 committed_at=2026-11-03T19:28:00.676215084Z
+time=2026-11-03T13:28:00.677-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:00 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:00.875-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=28 status=processing stage=starting simulation_step=26 variants_completed=0 committed_at=2026-11-03T19:28:00.875865882Z
+time=2026-11-03T13:28:00.876-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:00 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:01.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=29 status=processing stage=starting simulation_step=27 variants_completed=0 committed_at=2026-11-03T19:28:01.075819444Z
+time=2026-11-03T13:28:01.076-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:01 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:01.276-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=30 status=processing stage=starting simulation_step=28 variants_completed=0 committed_at=2026-11-03T19:28:01.276268826Z
+time=2026-11-03T13:28:01.277-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:01 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:01.475-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=31 status=processing stage=starting simulation_step=29 variants_completed=0 committed_at=2026-11-03T19:28:01.47572657Z
+time=2026-11-03T13:28:01.477-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:01 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:01.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=32 status=processing stage=starting simulation_step=30 variants_completed=0 committed_at=2026-11-03T19:28:01.675467632Z
+time=2026-11-03T13:28:01.676-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:01 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:01.875-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=33 status=processing stage=starting simulation_step=31 variants_completed=0 committed_at=2026-11-03T19:28:01.875874855Z
+time=2026-11-03T13:28:01.876-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:01 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:02.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=34 status=processing stage=starting simulation_step=32 variants_completed=0 committed_at=2026-11-03T19:28:02.075875135Z
+time=2026-11-03T13:28:02.077-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:02 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:02.276-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=35 status=processing stage=starting simulation_step=33 variants_completed=0 committed_at=2026-11-03T19:28:02.27663681Z
+time=2026-11-03T13:28:02.277-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:02 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:02.476-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=36 status=processing stage=starting simulation_step=34 variants_completed=0 committed_at=2026-11-03T19:28:02.47619056Z
+time=2026-11-03T13:28:02.477-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:02 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:02.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=37 status=processing stage=starting simulation_step=35 variants_completed=0 committed_at=2026-11-03T19:28:02.675971339Z
+time=2026-11-03T13:28:02.677-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:02 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:02.876-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=38 status=processing stage=starting simulation_step=36 variants_completed=0 committed_at=2026-11-03T19:28:02.87628497Z
+time=2026-11-03T13:28:02.877-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:02 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:03.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=39 status=processing stage=starting simulation_step=37 variants_completed=0 committed_at=2026-11-03T19:28:03.075720965Z
+time=2026-11-03T13:28:03.077-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:03 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:03.275-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=40 status=processing stage=starting simulation_step=38 variants_completed=0 committed_at=2026-11-03T19:28:03.275472878Z
+time=2026-11-03T13:28:03.277-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:03 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:03.475-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=41 status=processing stage=starting simulation_step=39 variants_completed=0 committed_at=2026-11-03T19:28:03.475551655Z
+time=2026-11-03T13:28:03.476-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:03 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:03.676-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=42 status=processing stage=starting simulation_step=40 variants_completed=0 committed_at=2026-11-03T19:28:03.676262492Z
+time=2026-11-03T13:28:03.677-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:03 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:03.875-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=43 status=processing stage=starting simulation_step=41 variants_completed=0 committed_at=2026-11-03T19:28:03.875677588Z
+time=2026-11-03T13:28:03.877-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:03 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:04.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=44 status=processing stage=starting simulation_step=42 variants_completed=0 committed_at=2026-11-03T19:28:04.075336622Z
+time=2026-11-03T13:28:04.076-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:04 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:04.276-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=45 status=processing stage=starting simulation_step=43 variants_completed=0 committed_at=2026-11-03T19:28:04.276143496Z
+time=2026-11-03T13:28:04.276-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:04 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:04.476-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=46 status=processing stage=starting simulation_step=44 variants_completed=0 committed_at=2026-11-03T19:28:04.476282775Z
+time=2026-11-03T13:28:04.477-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:04 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:04.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=47 status=processing stage=starting simulation_step=45 variants_completed=0 committed_at=2026-11-03T19:28:04.675981857Z
+time=2026-11-03T13:28:04.677-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:04 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:04.875-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=48 status=processing stage=starting simulation_step=46 variants_completed=0 committed_at=2026-11-03T19:28:04.875713922Z
+time=2026-11-03T13:28:04.876-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:04 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.075-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=49 status=processing stage=starting simulation_step=47 variants_completed=0 committed_at=2026-11-03T19:28:05.07546305Z
+time=2026-11-03T13:28:05.076-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.275-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=50 status=processing stage=starting simulation_step=48 variants_completed=0 committed_at=2026-11-03T19:28:05.275458488Z
+time=2026-11-03T13:28:05.276-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.476-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=51 status=processing stage=starting simulation_step=49 variants_completed=0 committed_at=2026-11-03T19:28:05.47612519Z
+time=2026-11-03T13:28:05.477-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.675-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=52 status=processing stage=starting simulation_step=50 variants_completed=0 committed_at=2026-11-03T19:28:05.675538472Z
+time=2026-11-03T13:28:05.677-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.721-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=53 status=processing stage=thumbnail_ready variants_completed=1 committed_at=2026-11-03T19:28:05.721143566Z
+time=2026-11-03T13:28:05.721-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.776-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=54 status=processing stage=preview_ready variants_completed=2 committed_at=2026-11-03T19:28:05.776492427Z
+time=2026-11-03T13:28:05.777-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.849-06:00 level=INFO msg="image job change committed" job_id=354ce911-e562-4c10-9314-da40af69a3c8 version=55 status=completed stage=display_ready variants_completed=3 committed_at=2026-11-03T19:28:05.849568315Z
+time=2026-11-03T13:28:05.849-06:00 level=INFO msg="image processing job completed" job_id=354ce911-e562-4c10-9314-da40af69a3c8
+time=2026-11-03T13:28:05.850-06:00 level=INFO msg="job observation read" job_id=354ce911-e562-4c10-9314-da40af69a3c8 mode=long database_reads=2
+2026/11/03 13:28:05 Method: POST URL: /v1/images
+2026/11/03 13:28:05 Method: GET URL: /v1/jobs/d2f2dfb0-a510-43e7-b49f-c7da6a3089ec/events
+time=2026-11-03T13:28:05.924-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=2 status=processing stage=starting variants_completed=0 committed_at=2026-11-03T19:28:05.924406223Z
+time=2026-11-03T13:28:06.125-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=3 status=processing stage=starting simulation_step=1 variants_completed=0 committed_at=2026-11-03T19:28:06.125693093Z
+time=2026-11-03T13:28:06.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=4 status=processing stage=starting simulation_step=2 variants_completed=0 committed_at=2026-11-03T19:28:06.326093228Z
+time=2026-11-03T13:28:06.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=5 status=processing stage=starting simulation_step=3 variants_completed=0 committed_at=2026-11-03T19:28:06.526865914Z
+time=2026-11-03T13:28:06.727-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=6 status=processing stage=starting simulation_step=4 variants_completed=0 committed_at=2026-11-03T19:28:06.727206807Z
+time=2026-11-03T13:28:06.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=7 status=processing stage=starting simulation_step=5 variants_completed=0 committed_at=2026-11-03T19:28:06.926260843Z
+time=2026-11-03T13:28:07.125-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=8 status=processing stage=starting simulation_step=6 variants_completed=0 committed_at=2026-11-03T19:28:07.125642359Z
+time=2026-11-03T13:28:07.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=9 status=processing stage=starting simulation_step=7 variants_completed=0 committed_at=2026-11-03T19:28:07.325991343Z
+time=2026-11-03T13:28:07.525-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=10 status=processing stage=starting simulation_step=8 variants_completed=0 committed_at=2026-11-03T19:28:07.525824829Z
+time=2026-11-03T13:28:07.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=11 status=processing stage=starting simulation_step=9 variants_completed=0 committed_at=2026-11-03T19:28:07.72640801Z
+time=2026-11-03T13:28:07.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=12 status=processing stage=starting simulation_step=10 variants_completed=0 committed_at=2026-11-03T19:28:07.926470399Z
+time=2026-11-03T13:28:08.126-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=13 status=processing stage=starting simulation_step=11 variants_completed=0 committed_at=2026-11-03T19:28:08.126489567Z
+time=2026-11-03T13:28:08.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=14 status=processing stage=starting simulation_step=12 variants_completed=0 committed_at=2026-11-03T19:28:08.326160864Z
+time=2026-11-03T13:28:08.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=15 status=processing stage=starting simulation_step=13 variants_completed=0 committed_at=2026-11-03T19:28:08.526289821Z
+time=2026-11-03T13:28:08.725-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=16 status=processing stage=starting simulation_step=14 variants_completed=0 committed_at=2026-11-03T19:28:08.725826491Z
+time=2026-11-03T13:28:08.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=17 status=processing stage=starting simulation_step=15 variants_completed=0 committed_at=2026-11-03T19:28:08.926678171Z
+time=2026-11-03T13:28:09.126-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=18 status=processing stage=starting simulation_step=16 variants_completed=0 committed_at=2026-11-03T19:28:09.126534876Z
+time=2026-11-03T13:28:09.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=19 status=processing stage=starting simulation_step=17 variants_completed=0 committed_at=2026-11-03T19:28:09.326158493Z
+time=2026-11-03T13:28:09.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=20 status=processing stage=starting simulation_step=18 variants_completed=0 committed_at=2026-11-03T19:28:09.526076973Z
+time=2026-11-03T13:28:09.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=21 status=processing stage=starting simulation_step=19 variants_completed=0 committed_at=2026-11-03T19:28:09.726836968Z
+time=2026-11-03T13:28:09.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=22 status=processing stage=starting simulation_step=20 variants_completed=0 committed_at=2026-11-03T19:28:09.926826469Z
+time=2026-11-03T13:28:10.127-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=23 status=processing stage=starting simulation_step=21 variants_completed=0 committed_at=2026-11-03T19:28:10.127031585Z
+time=2026-11-03T13:28:10.325-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=24 status=processing stage=starting simulation_step=22 variants_completed=0 committed_at=2026-11-03T19:28:10.325920797Z
+time=2026-11-03T13:28:10.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=25 status=processing stage=starting simulation_step=23 variants_completed=0 committed_at=2026-11-03T19:28:10.52684259Z
+time=2026-11-03T13:28:10.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=26 status=processing stage=starting simulation_step=24 variants_completed=0 committed_at=2026-11-03T19:28:10.726270046Z
+time=2026-11-03T13:28:10.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=27 status=processing stage=starting simulation_step=25 variants_completed=0 committed_at=2026-11-03T19:28:10.926666633Z
+time=2026-11-03T13:28:11.126-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=28 status=processing stage=starting simulation_step=26 variants_completed=0 committed_at=2026-11-03T19:28:11.126265741Z
+time=2026-11-03T13:28:11.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=29 status=processing stage=starting simulation_step=27 variants_completed=0 committed_at=2026-11-03T19:28:11.326259896Z
+time=2026-11-03T13:28:11.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=30 status=processing stage=starting simulation_step=28 variants_completed=0 committed_at=2026-11-03T19:28:11.526297475Z
+time=2026-11-03T13:28:11.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=31 status=processing stage=starting simulation_step=29 variants_completed=0 committed_at=2026-11-03T19:28:11.726119874Z
+time=2026-11-03T13:28:11.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=32 status=processing stage=starting simulation_step=30 variants_completed=0 committed_at=2026-11-03T19:28:11.92652032Z
+time=2026-11-03T13:28:12.125-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=33 status=processing stage=starting simulation_step=31 variants_completed=0 committed_at=2026-11-03T19:28:12.125876966Z
+time=2026-11-03T13:28:12.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=34 status=processing stage=starting simulation_step=32 variants_completed=0 committed_at=2026-11-03T19:28:12.326163546Z
+time=2026-11-03T13:28:12.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=35 status=processing stage=starting simulation_step=33 variants_completed=0 committed_at=2026-11-03T19:28:12.526643383Z
+time=2026-11-03T13:28:12.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=36 status=processing stage=starting simulation_step=34 variants_completed=0 committed_at=2026-11-03T19:28:12.72643123Z
+time=2026-11-03T13:28:12.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=37 status=processing stage=starting simulation_step=35 variants_completed=0 committed_at=2026-11-03T19:28:12.926251012Z
+time=2026-11-03T13:28:13.125-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=38 status=processing stage=starting simulation_step=36 variants_completed=0 committed_at=2026-11-03T19:28:13.125931565Z
+time=2026-11-03T13:28:13.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=39 status=processing stage=starting simulation_step=37 variants_completed=0 committed_at=2026-11-03T19:28:13.326039537Z
+time=2026-11-03T13:28:13.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=40 status=processing stage=starting simulation_step=38 variants_completed=0 committed_at=2026-11-03T19:28:13.526629471Z
+time=2026-11-03T13:28:13.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=41 status=processing stage=starting simulation_step=39 variants_completed=0 committed_at=2026-11-03T19:28:13.726345606Z
+time=2026-11-03T13:28:13.925-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=42 status=processing stage=starting simulation_step=40 variants_completed=0 committed_at=2026-11-03T19:28:13.925927773Z
+time=2026-11-03T13:28:14.126-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=43 status=processing stage=starting simulation_step=41 variants_completed=0 committed_at=2026-11-03T19:28:14.126260684Z
+time=2026-11-03T13:28:14.325-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=44 status=processing stage=starting simulation_step=42 variants_completed=0 committed_at=2026-11-03T19:28:14.32559897Z
+time=2026-11-03T13:28:14.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=45 status=processing stage=starting simulation_step=43 variants_completed=0 committed_at=2026-11-03T19:28:14.526249263Z
+time=2026-11-03T13:28:14.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=46 status=processing stage=starting simulation_step=44 variants_completed=0 committed_at=2026-11-03T19:28:14.726156181Z
+time=2026-11-03T13:28:14.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=47 status=processing stage=starting simulation_step=45 variants_completed=0 committed_at=2026-11-03T19:28:14.926781879Z
+time=2026-11-03T13:28:15.126-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=48 status=processing stage=starting simulation_step=46 variants_completed=0 committed_at=2026-11-03T19:28:15.126314086Z
+time=2026-11-03T13:28:15.326-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=49 status=processing stage=starting simulation_step=47 variants_completed=0 committed_at=2026-11-03T19:28:15.326428276Z
+time=2026-11-03T13:28:15.526-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=50 status=processing stage=starting simulation_step=48 variants_completed=0 committed_at=2026-11-03T19:28:15.526360299Z
+time=2026-11-03T13:28:15.726-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=51 status=processing stage=starting simulation_step=49 variants_completed=0 committed_at=2026-11-03T19:28:15.726606566Z
+time=2026-11-03T13:28:15.926-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=52 status=processing stage=starting simulation_step=50 variants_completed=0 committed_at=2026-11-03T19:28:15.926599975Z
+time=2026-11-03T13:28:15.972-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=53 status=processing stage=thumbnail_ready variants_completed=1 committed_at=2026-11-03T19:28:15.972752286Z
+time=2026-11-03T13:28:16.026-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=54 status=processing stage=preview_ready variants_completed=2 committed_at=2026-11-03T19:28:16.026401444Z
+time=2026-11-03T13:28:16.105-06:00 level=INFO msg="image job change committed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec version=55 status=completed stage=display_ready variants_completed=3 committed_at=2026-11-03T19:28:16.105293539Z
+time=2026-11-03T13:28:16.105-06:00 level=INFO msg="image processing job completed" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec
+time=2026-11-03T13:28:16.105-06:00 level=INFO msg="SSE stream ended" job_id=d2f2dfb0-a510-43e7-b49f-c7da6a3089ec database_reads=55 job_events=55 heartbeats=0 stream_ms=10229 peak_active_streams=1
+2026/11/03 13:28:16 Method: POST URL: /v1/images
+2026/11/03 13:28:16 Method: GET URL: /v1/jobs/6e7c8874-aa18-4523-acc2-a7b0745d36fe/events
+time=2026-11-03T13:28:16.174-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=2 status=processing stage=starting variants_completed=0 committed_at=2026-11-03T19:28:16.174542355Z
+time=2026-11-03T13:28:16.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=3 status=processing stage=starting simulation_step=1 variants_completed=0 committed_at=2026-11-03T19:28:16.37642142Z
+time=2026-11-03T13:28:16.575-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=4 status=processing stage=starting simulation_step=2 variants_completed=0 committed_at=2026-11-03T19:28:16.575664384Z
+time=2026-11-03T13:28:16.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=5 status=processing stage=starting simulation_step=3 variants_completed=0 committed_at=2026-11-03T19:28:16.776737618Z
+time=2026-11-03T13:28:16.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=6 status=processing stage=starting simulation_step=4 variants_completed=0 committed_at=2026-11-03T19:28:16.97635113Z
+time=2026-11-03T13:28:17.175-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=7 status=processing stage=starting simulation_step=5 variants_completed=0 committed_at=2026-11-03T19:28:17.175687489Z
+time=2026-11-03T13:28:17.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=8 status=processing stage=starting simulation_step=6 variants_completed=0 committed_at=2026-11-03T19:28:17.376069329Z
+time=2026-11-03T13:28:17.575-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=9 status=processing stage=starting simulation_step=7 variants_completed=0 committed_at=2026-11-03T19:28:17.575713566Z
+time=2026-11-03T13:28:17.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=10 status=processing stage=starting simulation_step=8 variants_completed=0 committed_at=2026-11-03T19:28:17.776182009Z
+time=2026-11-03T13:28:17.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=11 status=processing stage=starting simulation_step=9 variants_completed=0 committed_at=2026-11-03T19:28:17.976833342Z
+time=2026-11-03T13:28:18.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=12 status=processing stage=starting simulation_step=10 variants_completed=0 committed_at=2026-11-03T19:28:18.176451996Z
+time=2026-11-03T13:28:18.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=13 status=processing stage=starting simulation_step=11 variants_completed=0 committed_at=2026-11-03T19:28:18.376199638Z
+time=2026-11-03T13:28:18.575-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=14 status=processing stage=starting simulation_step=12 variants_completed=0 committed_at=2026-11-03T19:28:18.575504457Z
+time=2026-11-03T13:28:18.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=15 status=processing stage=starting simulation_step=13 variants_completed=0 committed_at=2026-11-03T19:28:18.776629535Z
+time=2026-11-03T13:28:18.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=16 status=processing stage=starting simulation_step=14 variants_completed=0 committed_at=2026-11-03T19:28:18.976431408Z
+time=2026-11-03T13:28:19.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=17 status=processing stage=starting simulation_step=15 variants_completed=0 committed_at=2026-11-03T19:28:19.176511455Z
+time=2026-11-03T13:28:19.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=18 status=processing stage=starting simulation_step=16 variants_completed=0 committed_at=2026-11-03T19:28:19.376208666Z
+time=2026-11-03T13:28:19.576-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=19 status=processing stage=starting simulation_step=17 variants_completed=0 committed_at=2026-11-03T19:28:19.576689639Z
+time=2026-11-03T13:28:19.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=20 status=processing stage=starting simulation_step=18 variants_completed=0 committed_at=2026-11-03T19:28:19.776672036Z
+time=2026-11-03T13:28:19.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=21 status=processing stage=starting simulation_step=19 variants_completed=0 committed_at=2026-11-03T19:28:19.976313204Z
+time=2026-11-03T13:28:20.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=22 status=processing stage=starting simulation_step=20 variants_completed=0 committed_at=2026-11-03T19:28:20.176076717Z
+time=2026-11-03T13:28:20.377-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=23 status=processing stage=starting simulation_step=21 variants_completed=0 committed_at=2026-11-03T19:28:20.377052121Z
+time=2026-11-03T13:28:20.577-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=24 status=processing stage=starting simulation_step=22 variants_completed=0 committed_at=2026-11-03T19:28:20.577027833Z
+time=2026-11-03T13:28:20.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=25 status=processing stage=starting simulation_step=23 variants_completed=0 committed_at=2026-11-03T19:28:20.776046453Z
+time=2026-11-03T13:28:20.975-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=26 status=processing stage=starting simulation_step=24 variants_completed=0 committed_at=2026-11-03T19:28:20.97598901Z
+time=2026-11-03T13:28:21.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=27 status=processing stage=starting simulation_step=25 variants_completed=0 committed_at=2026-11-03T19:28:21.176687438Z
+time=2026-11-03T13:28:21.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=28 status=processing stage=starting simulation_step=26 variants_completed=0 committed_at=2026-11-03T19:28:21.376410443Z
+time=2026-11-03T13:28:21.576-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=29 status=processing stage=starting simulation_step=27 variants_completed=0 committed_at=2026-11-03T19:28:21.576074475Z
+time=2026-11-03T13:28:21.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=30 status=processing stage=starting simulation_step=28 variants_completed=0 committed_at=2026-11-03T19:28:21.776481478Z
+time=2026-11-03T13:28:21.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=31 status=processing stage=starting simulation_step=29 variants_completed=0 committed_at=2026-11-03T19:28:21.976546396Z
+time=2026-11-03T13:28:22.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=32 status=processing stage=starting simulation_step=30 variants_completed=0 committed_at=2026-11-03T19:28:22.176491556Z
+time=2026-11-03T13:28:22.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=33 status=processing stage=starting simulation_step=31 variants_completed=0 committed_at=2026-11-03T19:28:22.376562109Z
+time=2026-11-03T13:28:22.576-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=34 status=processing stage=starting simulation_step=32 variants_completed=0 committed_at=2026-11-03T19:28:22.576434608Z
+time=2026-11-03T13:28:22.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=35 status=processing stage=starting simulation_step=33 variants_completed=0 committed_at=2026-11-03T19:28:22.776533506Z
+time=2026-11-03T13:28:22.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=36 status=processing stage=starting simulation_step=34 variants_completed=0 committed_at=2026-11-03T19:28:22.976450426Z
+time=2026-11-03T13:28:23.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=37 status=processing stage=starting simulation_step=35 variants_completed=0 committed_at=2026-11-03T19:28:23.17607562Z
+time=2026-11-03T13:28:23.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=38 status=processing stage=starting simulation_step=36 variants_completed=0 committed_at=2026-11-03T19:28:23.37679167Z
+time=2026-11-03T13:28:23.576-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=39 status=processing stage=starting simulation_step=37 variants_completed=0 committed_at=2026-11-03T19:28:23.57673119Z
+time=2026-11-03T13:28:23.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=40 status=processing stage=starting simulation_step=38 variants_completed=0 committed_at=2026-11-03T19:28:23.776585883Z
+time=2026-11-03T13:28:23.977-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=41 status=processing stage=starting simulation_step=39 variants_completed=0 committed_at=2026-11-03T19:28:23.977301306Z
+time=2026-11-03T13:28:24.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=42 status=processing stage=starting simulation_step=40 variants_completed=0 committed_at=2026-11-03T19:28:24.176279354Z
+time=2026-11-03T13:28:24.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=43 status=processing stage=starting simulation_step=41 variants_completed=0 committed_at=2026-11-03T19:28:24.376271525Z
+time=2026-11-03T13:28:24.577-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=44 status=processing stage=starting simulation_step=42 variants_completed=0 committed_at=2026-11-03T19:28:24.577008822Z
+time=2026-11-03T13:28:24.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=45 status=processing stage=starting simulation_step=43 variants_completed=0 committed_at=2026-11-03T19:28:24.776771936Z
+time=2026-11-03T13:28:24.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=46 status=processing stage=starting simulation_step=44 variants_completed=0 committed_at=2026-11-03T19:28:24.976004751Z
+time=2026-11-03T13:28:25.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=47 status=processing stage=starting simulation_step=45 variants_completed=0 committed_at=2026-11-03T19:28:25.176588426Z
+time=2026-11-03T13:28:25.376-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=48 status=processing stage=starting simulation_step=46 variants_completed=0 committed_at=2026-11-03T19:28:25.376356186Z
+time=2026-11-03T13:28:25.576-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=49 status=processing stage=starting simulation_step=47 variants_completed=0 committed_at=2026-11-03T19:28:25.576466204Z
+time=2026-11-03T13:28:25.776-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=50 status=processing stage=starting simulation_step=48 variants_completed=0 committed_at=2026-11-03T19:28:25.776418877Z
+time=2026-11-03T13:28:25.976-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=51 status=processing stage=starting simulation_step=49 variants_completed=0 committed_at=2026-11-03T19:28:25.976588996Z
+time=2026-11-03T13:28:26.176-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=52 status=processing stage=starting simulation_step=50 variants_completed=0 committed_at=2026-11-03T19:28:26.176259383Z
+time=2026-11-03T13:28:26.220-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=53 status=processing stage=thumbnail_ready variants_completed=1 committed_at=2026-11-03T19:28:26.220115993Z
+time=2026-11-03T13:28:26.274-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=54 status=processing stage=preview_ready variants_completed=2 committed_at=2026-11-03T19:28:26.274578554Z
+time=2026-11-03T13:28:26.348-06:00 level=INFO msg="image job change committed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe version=55 status=completed stage=display_ready variants_completed=3 committed_at=2026-11-03T19:28:26.348734599Z
+time=2026-11-03T13:28:26.348-06:00 level=INFO msg="image processing job completed" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe
+time=2026-11-03T13:28:26.349-06:00 level=INFO msg="SSE stream ended" job_id=6e7c8874-aa18-4523-acc2-a7b0745d36fe database_reads=55 job_events=55 heartbeats=0 stream_ms=10218 peak_active_streams=1
+2026/11/03 13:28:26 Method: POST URL: /v1/images
+2026/11/03 13:28:26 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:26.375-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=prompt database_reads=1
+2026/11/03 13:28:26 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:26.425-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=2 status=processing stage=starting variants_completed=0 committed_at=2026-11-03T19:28:26.425237586Z
+time=2026-11-03T13:28:26.426-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:26 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:26.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=3 status=processing stage=starting simulation_step=1 variants_completed=0 committed_at=2026-11-03T19:28:26.627478162Z
+time=2026-11-03T13:28:26.628-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:26 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:26.827-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=4 status=processing stage=starting simulation_step=2 variants_completed=0 committed_at=2026-11-03T19:28:26.827172037Z
+time=2026-11-03T13:28:26.827-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:26 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:27.026-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=5 status=processing stage=starting simulation_step=3 variants_completed=0 committed_at=2026-11-03T19:28:27.026330879Z
+time=2026-11-03T13:28:27.026-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:27 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:27.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=6 status=processing stage=starting simulation_step=4 variants_completed=0 committed_at=2026-11-03T19:28:27.227624254Z
+time=2026-11-03T13:28:27.228-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:27 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:27.427-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=7 status=processing stage=starting simulation_step=5 variants_completed=0 committed_at=2026-11-03T19:28:27.427130752Z
+time=2026-11-03T13:28:27.427-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:27 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:27.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=8 status=processing stage=starting simulation_step=6 variants_completed=0 committed_at=2026-11-03T19:28:27.627788805Z
+time=2026-11-03T13:28:27.629-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:27 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:27.826-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=9 status=processing stage=starting simulation_step=7 variants_completed=0 committed_at=2026-11-03T19:28:27.826643021Z
+time=2026-11-03T13:28:27.827-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:27 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:28.027-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=10 status=processing stage=starting simulation_step=8 variants_completed=0 committed_at=2026-11-03T19:28:28.027347641Z
+time=2026-11-03T13:28:28.028-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:28 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:28.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=11 status=processing stage=starting simulation_step=9 variants_completed=0 committed_at=2026-11-03T19:28:28.227643288Z
+time=2026-11-03T13:28:28.228-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:28 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:28.427-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=12 status=processing stage=starting simulation_step=10 variants_completed=0 committed_at=2026-11-03T19:28:28.427691959Z
+time=2026-11-03T13:28:28.428-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:28 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:28.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=13 status=processing stage=starting simulation_step=11 variants_completed=0 committed_at=2026-11-03T19:28:28.627579731Z
+time=2026-11-03T13:28:28.628-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:28 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:28.826-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=14 status=processing stage=starting simulation_step=12 variants_completed=0 committed_at=2026-11-03T19:28:28.826638737Z
+time=2026-11-03T13:28:28.827-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:28 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:29.026-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=15 status=processing stage=starting simulation_step=13 variants_completed=0 committed_at=2026-11-03T19:28:29.026924542Z
+time=2026-11-03T13:28:29.027-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:29 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:29.226-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=16 status=processing stage=starting simulation_step=14 variants_completed=0 committed_at=2026-11-03T19:28:29.226818644Z
+time=2026-11-03T13:28:29.227-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:29 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:29.426-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=17 status=processing stage=starting simulation_step=15 variants_completed=0 committed_at=2026-11-03T19:28:29.426926244Z
+time=2026-11-03T13:28:29.427-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:29 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:29.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=18 status=processing stage=starting simulation_step=16 variants_completed=0 committed_at=2026-11-03T19:28:29.62742979Z
+time=2026-11-03T13:28:29.628-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:29 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:29.827-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=19 status=processing stage=starting simulation_step=17 variants_completed=0 committed_at=2026-11-03T19:28:29.827055425Z
+time=2026-11-03T13:28:29.828-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:29 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:30.026-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=20 status=processing stage=starting simulation_step=18 variants_completed=0 committed_at=2026-11-03T19:28:30.026494007Z
+time=2026-11-03T13:28:30.027-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:30 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:30.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=21 status=processing stage=starting simulation_step=19 variants_completed=0 committed_at=2026-11-03T19:28:30.227008021Z
+time=2026-11-03T13:28:30.227-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:30 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:30.427-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=22 status=processing stage=starting simulation_step=20 variants_completed=0 committed_at=2026-11-03T19:28:30.427484347Z
+time=2026-11-03T13:28:30.428-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:30 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:30.626-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=23 status=processing stage=starting simulation_step=21 variants_completed=0 committed_at=2026-11-03T19:28:30.626796376Z
+time=2026-11-03T13:28:30.628-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:30 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:30.827-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=24 status=processing stage=starting simulation_step=22 variants_completed=0 committed_at=2026-11-03T19:28:30.827328558Z
+time=2026-11-03T13:28:30.828-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:30 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:31.027-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=25 status=processing stage=starting simulation_step=23 variants_completed=0 committed_at=2026-11-03T19:28:31.027223245Z
+time=2026-11-03T13:28:31.027-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:31 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:31.226-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=26 status=processing stage=starting simulation_step=24 variants_completed=0 committed_at=2026-11-03T19:28:31.226806329Z
+time=2026-11-03T13:28:31.227-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:31 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:31.427-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=27 status=processing stage=starting simulation_step=25 variants_completed=0 committed_at=2026-11-03T19:28:31.427234708Z
+time=2026-11-03T13:28:31.428-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:31 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:31.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=28 status=processing stage=starting simulation_step=26 variants_completed=0 committed_at=2026-11-03T19:28:31.627139161Z
+time=2026-11-03T13:28:31.627-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:31 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:31.827-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=29 status=processing stage=starting simulation_step=27 variants_completed=0 committed_at=2026-11-03T19:28:31.827231304Z
+time=2026-11-03T13:28:31.828-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:31 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:32.027-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=30 status=processing stage=starting simulation_step=28 variants_completed=0 committed_at=2026-11-03T19:28:32.027317624Z
+time=2026-11-03T13:28:32.028-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:32 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:32.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=31 status=processing stage=starting simulation_step=29 variants_completed=0 committed_at=2026-11-03T19:28:32.227350694Z
+time=2026-11-03T13:28:32.229-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:32 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:32.426-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=32 status=processing stage=starting simulation_step=30 variants_completed=0 committed_at=2026-11-03T19:28:32.426928307Z
+time=2026-11-03T13:28:32.427-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:32 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:32.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=33 status=processing stage=starting simulation_step=31 variants_completed=0 committed_at=2026-11-03T19:28:32.627711205Z
+time=2026-11-03T13:28:32.629-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:32 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:32.826-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=34 status=processing stage=starting simulation_step=32 variants_completed=0 committed_at=2026-11-03T19:28:32.826708709Z
+time=2026-11-03T13:28:32.827-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:32 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:33.026-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=35 status=processing stage=starting simulation_step=33 variants_completed=0 committed_at=2026-11-03T19:28:33.026636608Z
+time=2026-11-03T13:28:33.027-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:33 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:33.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=36 status=processing stage=starting simulation_step=34 variants_completed=0 committed_at=2026-11-03T19:28:33.227108675Z
+time=2026-11-03T13:28:33.228-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:33 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:33.427-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=37 status=processing stage=starting simulation_step=35 variants_completed=0 committed_at=2026-11-03T19:28:33.427480509Z
+time=2026-11-03T13:28:33.428-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:33 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:33.626-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=38 status=processing stage=starting simulation_step=36 variants_completed=0 committed_at=2026-11-03T19:28:33.626961331Z
+time=2026-11-03T13:28:33.627-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:33 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:33.827-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=39 status=processing stage=starting simulation_step=37 variants_completed=0 committed_at=2026-11-03T19:28:33.827565867Z
+time=2026-11-03T13:28:33.828-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:33 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:34.027-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=40 status=processing stage=starting simulation_step=38 variants_completed=0 committed_at=2026-11-03T19:28:34.027934265Z
+time=2026-11-03T13:28:34.029-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:34 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:34.226-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=41 status=processing stage=starting simulation_step=39 variants_completed=0 committed_at=2026-11-03T19:28:34.226791171Z
+time=2026-11-03T13:28:34.227-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:34 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:34.426-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=42 status=processing stage=starting simulation_step=40 variants_completed=0 committed_at=2026-11-03T19:28:34.426644927Z
+time=2026-11-03T13:28:34.427-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:34 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:34.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=43 status=processing stage=starting simulation_step=41 variants_completed=0 committed_at=2026-11-03T19:28:34.627241527Z
+time=2026-11-03T13:28:34.628-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:34 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:34.826-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=44 status=processing stage=starting simulation_step=42 variants_completed=0 committed_at=2026-11-03T19:28:34.826669607Z
+time=2026-11-03T13:28:34.827-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:34 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:35.027-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=45 status=processing stage=starting simulation_step=43 variants_completed=0 committed_at=2026-11-03T19:28:35.027601458Z
+time=2026-11-03T13:28:35.028-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:35 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:35.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=46 status=processing stage=starting simulation_step=44 variants_completed=0 committed_at=2026-11-03T19:28:35.227059068Z
+time=2026-11-03T13:28:35.227-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:35 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:35.426-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=47 status=processing stage=starting simulation_step=45 variants_completed=0 committed_at=2026-11-03T19:28:35.42686184Z
+time=2026-11-03T13:28:35.428-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:35 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:35.627-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=48 status=processing stage=starting simulation_step=46 variants_completed=0 committed_at=2026-11-03T19:28:35.627043803Z
+time=2026-11-03T13:28:35.627-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:35 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:35.826-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=49 status=processing stage=starting simulation_step=47 variants_completed=0 committed_at=2026-11-03T19:28:35.826378784Z
+time=2026-11-03T13:28:35.827-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:35 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.027-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=50 status=processing stage=starting simulation_step=48 variants_completed=0 committed_at=2026-11-03T19:28:36.027023717Z
+time=2026-11-03T13:28:36.027-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:36 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.227-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=51 status=processing stage=starting simulation_step=49 variants_completed=0 committed_at=2026-11-03T19:28:36.227380744Z
+time=2026-11-03T13:28:36.228-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:36 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.427-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=52 status=processing stage=starting simulation_step=50 variants_completed=0 committed_at=2026-11-03T19:28:36.427050351Z
+time=2026-11-03T13:28:36.428-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:36 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.472-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=53 status=processing stage=thumbnail_ready variants_completed=1 committed_at=2026-11-03T19:28:36.472297167Z
+time=2026-11-03T13:28:36.472-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:36 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.528-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=54 status=processing stage=preview_ready variants_completed=2 committed_at=2026-11-03T19:28:36.528305177Z
+time=2026-11-03T13:28:36.528-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2
+2026/11/03 13:28:36 Method: GET URL: /v1/jobs/172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.609-06:00 level=INFO msg="image job change committed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 version=55 status=completed stage=display_ready variants_completed=3 committed_at=2026-11-03T19:28:36.609459384Z
+time=2026-11-03T13:28:36.609-06:00 level=INFO msg="image processing job completed" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5
+time=2026-11-03T13:28:36.610-06:00 level=INFO msg="job observation read" job_id=172b51ef-91ad-48ad-a7e7-45273d84c7e5 mode=long database_reads=2

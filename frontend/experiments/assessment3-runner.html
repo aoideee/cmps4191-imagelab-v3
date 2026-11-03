@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ImageLab Assessment 3 Runner</title>
+  </head>
+  <body>
+    <h1>ImageLab Assessment 3 browser runner</h1>
+    <p id="status">Starting controlled runs…</p>
+    <script type="module">
+      import {
+        API_BASE_URL,
+        DataService,
+        eventStreamUrl,
+        validateJobSnapshot,
+      } from "../modules/data-service.js";
+
+      const condition = new URLSearchParams(location.search).get("condition");
+      const validConditions = new Set(["A", "B", "C"]);
+      if (!validConditions.has(condition)) {
+        throw new Error("condition must be A, B, or C");
+      }
+
+      const runOrder = [
+        { mode: "sse", repetition: 1 },
+        { mode: "long", repetition: 1 },
+        { mode: "long", repetition: 2 },
+        { mode: "sse", repetition: 2 },
+        { mode: "sse", repetition: 3 },
+        { mode: "long", repetition: 3 },
+      ];
+
+      const imageBlob = await fetch("../../docs/evidence/01-initial-state.png").then(
+        (response) => response.blob(),
+      );
+      const image = new File([imageBlob], "assessment3-source.png", {
+        type: imageBlob.type,
+      });
+
+      for (const run of runOrder) {
+        document.getElementById("status").textContent =
+          `Condition ${condition}, ${run.mode}, repetition ${run.repetition}`;
+        const result = await executeRun(run.mode, run.repetition);
+        console.log("IMAGELAB_RUN_RESULT", JSON.stringify(result));
+      }
+
+      document.getElementById("status").textContent = "Condition complete";
+      console.log("IMAGELAB_CONDITION_COMPLETE", condition);
+
+      async function executeRun(mode, repetition) {
+        const accepted = await DataService.uploadImage(image);
+        const base = {
+          run_id: `${condition}-${mode}-${repetition}`,
+          condition,
+          mode,
+          repetition,
+          job_id: accepted.job_id,
+          image: image.name,
+          observation_gets: 0,
+          sse_stream_gets: 0,
+          job_events_received: 0,
+          heartbeats: 0,
+          observation_db_reads: null,
+          peak_active_streams: mode === "sse" ? 1 : 0,
+          notes: "Foreground headless Chrome; Date.now receipt minus PostgreSQL terminal timestamp",
+        };
+
+        const observation =
+          mode === "sse"
+            ? await observeWithSSE(accepted.status_url)
+            : await observeWithLongPolling(accepted.status_url);
+        const versions = [...new Set(observation.versions)];
+        const gaps = versions.slice(1).reduce((total, version, index) => {
+          return total + Math.max(0, version - versions[index] - 1);
+        }, 0);
+        const terminal = observation.terminal;
+        const terminalAt = Date.parse(
+          terminal.status === "completed"
+            ? terminal.completed_at
+            : terminal.failed_at,
+        );
+        const startedAt = Date.parse(terminal.started_at);
+
+        return {
+          ...base,
+          baseline_version: versions[0],
+          terminal_version: terminal.version,
+          observation_gets: observation.observationGets,
+          sse_stream_gets: observation.sseStreamGets,
+          job_events_received: observation.jobEventsReceived,
+          versions_received: versions.join("|"),
+          version_gaps: gaps,
+          processing_ms: terminalAt - startedAt,
+          detection_ms: observation.receivedAt - terminalAt,
+          stream_seconds: observation.streamSeconds,
+          status: terminal.status,
+        };
+      }
+
+      async function observeWithLongPolling(statusUrl) {
+        const versions = [];
+        let snapshot = null;
+        let observationGets = 0;
+        while (snapshot === null || !isTerminal(snapshot.status)) {
+          const url =
+            snapshot === null
+              ? statusUrl
+              : `${statusUrl}?after=${snapshot.version}&wait=20`;
+          observationGets++;
+          const response = await fetch(`${API_BASE_URL}${url}`);
+          if (response.status === 204) continue;
+          if (!response.ok) throw new Error(`Long poll failed: ${response.status}`);
+          snapshot = validateJobSnapshot(await response.json());
+          versions.push(snapshot.version);
+        }
+        return {
+          terminal: snapshot,
+          receivedAt: Date.now(),
+          versions,
+          observationGets,
+          sseStreamGets: 0,
+          jobEventsReceived: 0,
+          streamSeconds: 0,
+        };
+      }
+
+      function observeWithSSE(statusUrl) {
+        return new Promise((resolve, reject) => {
+          const versions = [];
+          const startedAt = performance.now();
+          let streamGets = 0;
+          let jobEvents = 0;
+          const source = new EventSource(eventStreamUrl(statusUrl));
+          const timeout = setTimeout(() => {
+            source.close();
+            reject(new Error("SSE run exceeded 90 seconds"));
+          }, 90000);
+
+          source.onopen = () => {
+            streamGets++;
+          };
+          source.addEventListener("job-update", (event) => {
+            try {
+              const snapshot = validateJobSnapshot(JSON.parse(event.data));
+              jobEvents++;
+              versions.push(snapshot.version);
+              if (!isTerminal(snapshot.status)) return;
+              const receivedAt = Date.now();
+              const streamSeconds = (performance.now() - startedAt) / 1000;
+              clearTimeout(timeout);
+              source.close();
+              resolve({
+                terminal: snapshot,
+                receivedAt,
+                versions,
+                observationGets: streamGets,
+                sseStreamGets: streamGets,
+                jobEventsReceived: jobEvents,
+                streamSeconds,
+              });
+            } catch (error) {
+              clearTimeout(timeout);
+              source.close();
+              reject(error);
+            }
+          });
+        });
+      }
+
+      function isTerminal(status) {
+        return status === "completed" || status === "failed";
+      }
+    </script>
+  </body>
+</html>
