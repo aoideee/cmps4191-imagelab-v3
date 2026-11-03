@@ -24,7 +24,11 @@ test("calculates all six measurements for a completed job", () => {
     queue_wait_ms: 250,
     processing_ms: 2000,
     job_duration_ms: 2250,
+    observation_gets: 3,
     polling_count: 3,
+    sse_stream_gets: 0,
+    sse_job_events: 0,
+    versions_received: "",
     detection_delay_ms: 250,
   });
 });

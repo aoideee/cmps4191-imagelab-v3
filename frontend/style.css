@@ -970,6 +970,16 @@ a:focus-visible {
   border-color: var(--card-border-dashed);
 }
 
+.observation-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.observation-actions.hidden {
+  display: none;
+}
+
 /* Run measurements */
 .measurements-card {
   grid-column: 1 / -1;

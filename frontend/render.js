@@ -50,9 +50,14 @@ emitter.on("stateChanged", (state) => {
           description: "Queue entry to successful completion.",
         },
         {
-          label: "Status requests",
-          value: String(measurement.polling_count),
-          description: "Status checks attempted for this job.",
+          label: "Observation GETs",
+          value: String(measurement.observation_gets),
+          description: "Polling requests or opened SSE streams.",
+        },
+        {
+          label: "SSE job events",
+          value: String(measurement.sse_job_events),
+          description: "Named snapshot events received; excludes heartbeats.",
         },
         {
           label: "Detection delay",
@@ -92,6 +97,12 @@ emitter.on("stateChanged", (state) => {
   const labelComplete = document.getElementById("label-complete");
   const jobError = document.getElementById("job-error");
   const pollingIndicator = document.getElementById("polling-indicator");
+  const observationStatusText = document.getElementById(
+    "observation-status-text",
+  );
+  const observationActions = document.getElementById("observation-actions");
+  const stopObservingBtn = document.getElementById("stop-observing-btn");
+  const resumeObservingBtn = document.getElementById("resume-observing-btn");
   const jobWorkText = document.getElementById("job-work-text");
   const chooseImageBtn = document.getElementById("choose-image-btn");
   const fileInput = document.getElementById("file-input");
@@ -102,10 +113,11 @@ emitter.on("stateChanged", (state) => {
   const jobProgress = document.getElementById("job-progress");
 	const simulatedProgress = document.getElementById("simulated-progress");
 
-  const modeText =
-    state.observationMode === "long"
-      ? "Long polling"
-      : "Short polling (every 1 second)";
+  const modeText = {
+    short: "Short polling (every 1 second)",
+    long: "Long polling",
+    sse: "Server-Sent Events",
+  }[state.observationMode];
   modeLabel.textContent = modeText;
   jobMode.textContent = modeText;
   jobVersion.textContent = state.lastObservedVersion ?? "--";
@@ -159,11 +171,21 @@ emitter.on("stateChanged", (state) => {
     (state.activeJob.status === "queued" ||
       state.activeJob.status === "processing");
 
-  // Show this only while the app is observing an unfinished job.
-  const isPolling =
-    isJobActive && state.abortController !== null && !state.observationError;
-
-  pollingIndicator.classList.toggle("hidden", !isPolling);
+  const isActivelyObserving =
+    isJobActive && state.isObserving && !state.observationError;
+  pollingIndicator.classList.toggle("hidden", !isActivelyObserving);
+  observationActions.classList.toggle("hidden", !isJobActive);
+  stopObservingBtn.classList.toggle("hidden", !isActivelyObserving);
+  resumeObservingBtn.classList.toggle(
+    "hidden",
+    isActivelyObserving || state.observationState !== "stopped",
+  );
+  observationStatusText.textContent =
+    state.observationState === "reconnecting"
+      ? "Connection interrupted; retrying automatically"
+      : state.observationMode === "sse"
+        ? "Receiving live job snapshots"
+        : "Checking status automatically";
 
   // Explain what is happening to the current job.
   // Give the processing card a clear summary for each visible state.
@@ -207,12 +229,26 @@ emitter.on("stateChanged", (state) => {
       detail: "Your job may still be running. Try again to reconnect.",
       icon: "↻",
     },
+    stopped: {
+      title: "Observation stopped.",
+      detail: "The worker is still processing this job. Resume to see its current state.",
+      icon: "Ⅱ",
+    },
+    reconnecting: {
+      title: "Live connection interrupted.",
+      detail: "The same EventSource is reconnecting to the current job.",
+      icon: "↻",
+    },
   };
 
   const displayState = state.isSubmitting
     ? "uploading"
     : state.observationError
       ? "observation"
+      : isJobActive && state.observationState === "stopped"
+        ? "stopped"
+        : isJobActive && state.observationState === "reconnecting"
+          ? "reconnecting"
       : state.activeJob?.status || "idle";
 
   const summary = summaries[displayState] || summaries.idle;

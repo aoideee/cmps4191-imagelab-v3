@@ -25,7 +25,11 @@ export function buildMeasurement(job, metrics) {
     processing_ms: difference(finished, started),
     job_duration_ms:
       job.status === "completed" ? difference(completed, queued) : null,
-    polling_count: metrics.pollingCount,
+    observation_gets: metrics.observationGets ?? metrics.pollingCount ?? 0,
+    polling_count: metrics.pollingCount ?? 0,
+    sse_stream_gets: metrics.sseStreamGets ?? 0,
+    sse_job_events: metrics.jobEventsReceived ?? 0,
+    versions_received: (metrics.versionsReceived ?? []).join("|"),
     detection_delay_ms:
       job.status === "completed"
         ? difference(metrics.completionObservedAt, completed)

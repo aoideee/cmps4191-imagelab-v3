@@ -10,12 +10,19 @@ const state = {
   observationMode: "long",
   lastObservedVersion: null,
   pollingTimer: null,
-  abortController: null, // For cancelling fetch requests on reset
-  observationError: false, // Distinguishes GET failure from job failure[cite: 1]
+  abortController: null,
+  eventSource: null,
+  isObserving: false,
+  observationState: "idle",
+  observationError: false,
   metrics: {
     requestStart: null,
     ackLatency: null,
     pollingCount: 0,
+    observationGets: 0,
+    sseStreamGets: 0,
+    jobEventsReceived: 0,
+    versionsReceived: [],
     completionObservedAt: null,
   },
 };

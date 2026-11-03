@@ -1,22 +1,27 @@
 import { getState, setState } from "./state.js";
-import { DataService } from "./modules/data-service.js";
+import {
+  DataService,
+  eventStreamUrl,
+  validateJobSnapshot,
+} from "./modules/data-service.js";
 import { buildMeasurement } from "./modules/measurements.js";
 
 const fileInput = document.getElementById("file-input");
 const chooseImageBtn = document.getElementById("choose-image-btn");
 const processBtn = document.getElementById("process-btn");
 const tryAgainBtn = document.getElementById("try-again-btn");
+const stopObservingBtn = document.getElementById("stop-observing-btn");
+const resumeObservingBtn = document.getElementById("resume-observing-btn");
 const modeInputs = document.querySelectorAll('input[name="observation-mode"]');
 
 let selectionVersion = 0;
 let observationGeneration = 0;
 
-window.addEventListener("beforeunload", stopObservation);
+window.addEventListener("beforeunload", () => stopObservation(false));
 
 for (const input of modeInputs) {
   input.addEventListener("change", () => {
     if (!input.checked) return;
-
     setState({ observationMode: input.value });
     const { activeJob } = getState();
     if (activeJob?.status_url && !isTerminal(activeJob.status)) {
@@ -27,20 +32,16 @@ for (const input of modeInputs) {
 
 fileInput.addEventListener("change", async (event) => {
   if (getState().isSubmitting) return;
-
   const file = event.target.files[0];
   if (!file) return;
 
   const thisSelection = ++selectionVersion;
   const maxImageSize = 10 * 1024 * 1024;
   const allowedTypes = ["image/jpeg", "image/png"];
-
   let error = null;
-  if (file.size === 0) {
-    error = "This file is empty. Choose a JPEG or PNG image.";
-  } else if (!allowedTypes.includes(file.type)) {
-    error = "Choose a JPEG or PNG image.";
-  } else if (file.size > maxImageSize) {
+  if (file.size === 0) error = "This file is empty. Choose a JPEG or PNG image.";
+  else if (!allowedTypes.includes(file.type)) error = "Choose a JPEG or PNG image.";
+  else if (file.size > maxImageSize) {
     error = "This image exceeds the 10 MB limit. Choose a smaller image.";
   }
 
@@ -52,7 +53,6 @@ fileInput.addEventListener("change", async (event) => {
 
   setState({ selectedFile: null, isValidating: true, uploadError: null });
   let checkUrl = null;
-
   try {
     checkUrl = URL.createObjectURL(file);
     const imageCheck = new Image();
@@ -73,8 +73,7 @@ fileInput.addEventListener("change", async (event) => {
   }
 
   if (thisSelection !== selectionVersion) return;
-
-  stopObservation();
+  stopObservation(false);
   setState({
     selectedFile: file,
     isValidating: false,
@@ -98,10 +97,9 @@ processBtn.addEventListener("click", async () => {
     return;
   }
 
-  stopObservation();
+  stopObservation(false);
   const requestStart = performance.now();
   setState({ isSubmitting: true, uploadError: null, observationError: false });
-
   try {
     const accepted = await DataService.uploadImage(selectedFile);
     setState({
@@ -127,19 +125,26 @@ chooseImageBtn.addEventListener("click", () => {
   fileInput.click();
 });
 
-tryAgainBtn.addEventListener("click", () => {
+tryAgainBtn.addEventListener("click", resumeObservation);
+resumeObservingBtn.addEventListener("click", resumeObservation);
+stopObservingBtn.addEventListener("click", () => stopObservation(true));
+
+function resumeObservation() {
   const { activeJob } = getState();
-  if (activeJob?.status_url) {
-    setState({ observationError: false });
+  if (activeJob?.status_url && !isTerminal(activeJob.status)) {
     startObservation(activeJob.status_url);
   }
-});
+}
 
 function freshMetrics() {
   return {
     requestStart: null,
     ackLatency: null,
     pollingCount: 0,
+    observationGets: 0,
+    sseStreamGets: 0,
+    jobEventsReceived: 0,
+    versionsReceived: [],
     completionObservedAt: null,
   };
 }
@@ -149,35 +154,117 @@ function isTerminal(status) {
 }
 
 function startObservation(statusUrl) {
-  stopObservation();
-
+  stopObservation(false);
   const generation = observationGeneration;
+  setState({
+    observationError: false,
+    observationState: "connecting",
+    isObserving: true,
+  });
+
+  if (getState().observationMode === "sse") {
+    startEventStream(statusUrl, generation);
+    return;
+  }
+
   const controller = new AbortController();
   setState({ abortController: controller, pollingTimer: null });
-  void runObservation(statusUrl, controller, generation);
+  void runPollingObservation(statusUrl, controller, generation);
 }
 
-function stopObservation() {
+function stopObservation(explicit) {
   observationGeneration++;
-  const { pollingTimer, abortController } = getState();
+  const { pollingTimer, abortController, eventSource, activeJob } = getState();
   if (pollingTimer !== null) clearTimeout(pollingTimer);
   abortController?.abort();
-  setState({ pollingTimer: null, abortController: null });
+  eventSource?.close();
+  setState({
+    pollingTimer: null,
+    abortController: null,
+    eventSource: null,
+    isObserving: false,
+    observationState: explicit && activeJob ? "stopped" : "idle",
+  });
+  if (explicit && activeJob) {
+    logObservation("observation_stopped", {
+      job_id: activeJob.job_id ?? activeJob.id,
+      job_status: activeJob.status,
+    });
+  }
 }
 
-async function runObservation(statusUrl, controller, generation) {
+function startEventStream(statusUrl, generation) {
+  const source = new EventSource(eventStreamUrl(statusUrl));
+  setState({ eventSource: source });
+
+  const isCurrent = () =>
+    generation === observationGeneration && getState().eventSource === source;
+
+  source.onopen = () => {
+    if (!isCurrent()) return;
+    const metrics = getState().metrics;
+    setState({
+      observationState: "connected",
+      metrics: {
+        ...metrics,
+        observationGets: metrics.observationGets + 1,
+        sseStreamGets: metrics.sseStreamGets + 1,
+      },
+    });
+    logObservation("sse_stream_opened", {
+      mode: "sse",
+      stream_number: getState().metrics.sseStreamGets,
+      opened_at: Date.now(),
+      url: eventStreamUrl(statusUrl),
+    });
+  };
+
+  source.addEventListener("job-update", (event) => {
+    if (!isCurrent()) return;
+    const receivedAt = Date.now();
+    try {
+      const snapshot = validateJobSnapshot(JSON.parse(event.data));
+      const metrics = getState().metrics;
+      setState({
+        metrics: {
+          ...metrics,
+          jobEventsReceived: metrics.jobEventsReceived + 1,
+        },
+      });
+      acceptSnapshot(snapshot, statusUrl, receivedAt, {
+        event: "sse_job_update",
+        stream_number: getState().metrics.sseStreamGets,
+      });
+    } catch (error) {
+      logObservation("sse_event_error", { error: error.message });
+      stopObservation(false);
+      setState({ observationError: true, observationState: "error" });
+    }
+  });
+
+  source.onerror = () => {
+    if (!isCurrent()) return;
+    setState({ observationState: "reconnecting" });
+    logObservation("sse_stream_interrupted", {
+      mode: "sse",
+      occurred_at: Date.now(),
+      ready_state: source.readyState,
+    });
+    // Keep this EventSource object. The browser opens the reconnection GET.
+  };
+}
+
+async function runPollingObservation(statusUrl, controller, generation) {
   const isCurrent = () =>
     generation === observationGeneration &&
     getState().abortController === controller &&
     !controller.signal.aborted;
-
   let initialSnapshot = true;
   let inFlight = null;
 
   try {
     while (isCurrent()) {
       const mode = getState().observationMode;
-
       if (!initialSnapshot && mode === "short") {
         await delay(1000, controller.signal, (timer) => {
           if (isCurrent()) setState({ pollingTimer: timer });
@@ -188,14 +275,16 @@ async function runObservation(statusUrl, controller, generation) {
 
       let requestUrl = statusUrl;
       if (!initialSnapshot && mode === "long") {
-        const after = getState().lastObservedVersion;
-        requestUrl = `${statusUrl}?after=${encodeURIComponent(after)}&wait=20`;
+        requestUrl = `${statusUrl}?after=${encodeURIComponent(getState().lastObservedVersion)}&wait=20`;
       }
 
+      const metrics = getState().metrics;
       setState({
+        observationState: "connected",
         metrics: {
-          ...getState().metrics,
-          pollingCount: getState().metrics.pollingCount + 1,
+          ...metrics,
+          pollingCount: metrics.pollingCount + 1,
+          observationGets: metrics.observationGets + 1,
         },
       });
       inFlight = {
@@ -206,21 +295,18 @@ async function runObservation(statusUrl, controller, generation) {
       };
       logObservation("request_started", inFlight);
 
-      const jobData = await DataService.fetchJobStatus(
+      const snapshot = await DataService.fetchJobStatus(
         requestUrl,
         controller.signal,
         30000,
       );
-      const responseObservedAt = Date.now();
-
+      const receivedAt = Date.now();
       if (!isCurrent()) return;
 
-      // 204 is a normal holding-deadline result: retain the last version and
-      // immediately issue the next long poll without attempting JSON parsing.
-      if (jobData === null) {
+      if (snapshot === null) {
         logObservation("response_received", {
           ...inFlight,
-          response_received_at: responseObservedAt,
+          response_received_at: receivedAt,
           http_status: 204,
           received_version: null,
         });
@@ -229,68 +315,73 @@ async function runObservation(statusUrl, controller, generation) {
         continue;
       }
 
-      const activeJob = getState().activeJob;
-      const expectedJobId = activeJob?.job_id ?? activeJob?.id;
-      if (jobData.id !== expectedJobId) {
-        throw new Error("Status response belongs to a different job");
-      }
-
-      const previousVersion = getState().lastObservedVersion;
-      if (previousVersion !== null && jobData.version < previousVersion) {
-        throw new Error("Status response moved to an older version");
-      }
-
-      const mergedJob = { ...jobData, status_url: statusUrl };
-      const renderStartedAt = performance.now();
-      setState({
-        activeJob: mergedJob,
-        lastObservedVersion: jobData.version,
-        variants: jobData.variants || [],
-      });
-      logObservation("response_received", {
+      acceptSnapshot(snapshot, statusUrl, receivedAt, {
+        event: "response_received",
         ...inFlight,
-        response_received_at: responseObservedAt,
         http_status: 200,
-        received_version: jobData.version,
-        rendering_ms: performance.now() - renderStartedAt,
       });
       inFlight = null;
-
       initialSnapshot = false;
-      if (isTerminal(jobData.status)) {
-        const metrics = {
-          ...getState().metrics,
-          completionObservedAt:
-            jobData.status === "completed" ? responseObservedAt : null,
-        };
-        setState({ metrics });
-        console.table([buildMeasurement(mergedJob, metrics)]);
-        stopObservation();
-        return;
-      }
     }
   } catch (error) {
     if (inFlight !== null) {
       logObservation(
         error.name === "AbortError" ? "request_cancelled" : "request_error",
-        {
-          ...inFlight,
-          response_received_at: Date.now(),
-          error: error.message,
-        },
+        { ...inFlight, response_received_at: Date.now(), error: error.message },
       );
     }
     if (!isCurrent() || error.name === "AbortError") return;
-    stopObservation();
-    setState({ observationError: true });
+    stopObservation(false);
+    setState({ observationError: true, observationState: "error" });
+  }
+}
+
+function acceptSnapshot(snapshot, statusUrl, receivedAt, logDetails) {
+  const state = getState();
+  const expectedJobId = state.activeJob?.job_id ?? state.activeJob?.id;
+  if (snapshot.id !== expectedJobId) {
+    throw new Error("Status response belongs to a different job");
+  }
+  if (
+    state.lastObservedVersion !== null &&
+    snapshot.version < state.lastObservedVersion
+  ) {
+    throw new Error("Status response moved to an older version");
+  }
+
+  const versions = new Set(state.metrics.versionsReceived);
+  versions.add(snapshot.version);
+  const mergedJob = { ...snapshot, status_url: statusUrl };
+  const metrics = {
+    ...state.metrics,
+    versionsReceived: [...versions].sort((a, b) => a - b),
+    completionObservedAt:
+      snapshot.status === "completed"
+        ? receivedAt
+        : state.metrics.completionObservedAt,
+  };
+  const renderStartedAt = performance.now();
+  setState({
+    activeJob: mergedJob,
+    lastObservedVersion: snapshot.version,
+    variants: snapshot.variants || [],
+    metrics,
+  });
+  logObservation(logDetails.event, {
+    ...logDetails,
+    response_received_at: receivedAt,
+    received_version: snapshot.version,
+    rendering_ms: performance.now() - renderStartedAt,
+  });
+
+  if (isTerminal(snapshot.status)) {
+    console.table([buildMeasurement(mergedJob, metrics)]);
+    stopObservation(false);
   }
 }
 
 function logObservation(event, details) {
-  console.info(
-    "IMAGELAB_OBSERVATION",
-    JSON.stringify({ event, ...details }),
-  );
+  console.info("IMAGELAB_OBSERVATION", JSON.stringify({ event, ...details }));
 }
 
 function delay(ms, signal, onTimer) {

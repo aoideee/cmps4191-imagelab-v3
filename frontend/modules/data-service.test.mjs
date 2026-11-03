@@ -1,6 +1,33 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { DataService } from "./data-service.js";
+import {
+  DataService,
+  eventStreamUrl,
+  validateJobSnapshot,
+} from "./data-service.js";
+
+test("builds the SSE endpoint from the accepted status URL", () => {
+  assert.equal(
+    eventStreamUrl("/v1/jobs/test-job"),
+    "http://localhost:4000/v1/jobs/test-job/events",
+  );
+});
+
+test("validates the same snapshot contract for SSE events", () => {
+  const snapshot = {
+    id: "test-job",
+    status: "processing",
+    version: 3,
+    stage: "thumbnail_ready",
+    variants_completed: 1,
+    simulation_step: 0,
+  };
+  assert.equal(validateJobSnapshot(snapshot), snapshot);
+  assert.throws(
+    () => validateJobSnapshot({ ...snapshot, version: 0 }),
+    /missing a valid version/,
+  );
+});
 
 // Simulate a request that never finishes unless its signal is aborted.
 function waitingFetch(_url, { signal }) {
