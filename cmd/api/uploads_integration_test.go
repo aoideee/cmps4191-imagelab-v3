@@ -17,7 +17,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/lewisdalwin/gatekeeper/internal/data"
+	"github.com/aoideee/cmps4191-imagelab-v3/internal/data"
 )
 
 // Opt in with IMAGELAB_INTEGRATION_TESTS=1 go test ./cmd/api -run TestUploadAcceptanceIntegration -v.

@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/lewisdalwin/gatekeeper/internal/data"
+	"github.com/aoideee/cmps4191-imagelab-v3/internal/data"
 )
 
 func (app *application) uploadImageHandler(w http.ResponseWriter, r *http.Request) {
@@ -222,6 +222,12 @@ func (app *application) getJobHandler(w http.ResponseWriter, r *http.Request) {
 			app.writeJobLookupError(w, r, err)
 			return
 		}
+		app.logger.Info(
+			"job observation read",
+			"job_id", r.PathValue("id"),
+			"mode", "prompt",
+			"database_reads", 1,
+		)
 		app.writeJobSnapshot(w, r, job)
 		return
 	}
@@ -230,11 +236,21 @@ func (app *application) getJobHandler(w http.ResponseWriter, r *http.Request) {
 	defer deadline.Stop()
 
 	jobID := r.PathValue("id")
+	databaseReads := 0
+	defer func() {
+		app.logger.Info(
+			"job observation read",
+			"job_id", jobID,
+			"mode", "long",
+			"database_reads", databaseReads,
+		)
+	}()
 	for {
 		// Capture the signal before reading PostgreSQL. A commit between the
 		// read and wait closes this channel, so the change cannot be missed.
 		subscription := app.observers.subscribe(jobID)
 		job, err := app.models.Jobs.GetByPublicID(jobID)
+		databaseReads++
 		if err != nil {
 			subscription.release()
 			app.writeJobLookupError(w, r, err)
@@ -267,6 +283,7 @@ func (app *application) getJobHandler(w http.ResponseWriter, r *http.Request) {
 
 			// Recheck authoritative state before deciding that nothing changed.
 			job, err := app.models.Jobs.GetByPublicID(jobID)
+			databaseReads++
 			if err != nil {
 				app.writeJobLookupError(w, r, err)
 				return

@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/lewisdalwin/gatekeeper/internal/data"
+	"github.com/aoideee/cmps4191-imagelab-v3/internal/data"
 )
 
 func TestJobTimestampsIntegration(t *testing.T) {

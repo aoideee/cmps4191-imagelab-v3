@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/lewisdalwin/gatekeeper/internal/data"
+	"github.com/aoideee/cmps4191-imagelab-v3/internal/data"
 )
 
 const sseHeartbeatInterval = 15 * time.Second

@@ -31,11 +31,15 @@ check/db-dsn:
 ## run/api: run the cmd/api application
 .PHONY: run/api
 run/api: check/db-dsn
-	go run ./cmd/api -db-dsn=${GATEKEEPER_DB_DSN} -job-delay=30s -simulation-duration=0s
+	go run ./cmd/api -db-dsn=${GATEKEEPER_DB_DSN}
 
-.PHONY: run/api/logs
-run/api/logs: check/db-dsn
-	go run ./cmd/api -db-dsn=${GATEKEEPER_DB_DSN} -job-delay=0s -simulation-duration=10s -simulation-interval=200ms 2>&1 | tee EXPERIMENT-5_server_runs.log
+.PHONY: run/api/quiet
+run/api/quiet: check/db-dsn
+	go run ./cmd/api -db-dsn=${GATEKEEPER_DB_DSN} -job-delay=30s
+
+.PHONY: run/api/frequent
+run/api/frequent: check/db-dsn
+	go run ./cmd/api -db-dsn=${GATEKEEPER_DB_DSN} -simulation-duration=10s -simulation-interval=200ms
 	
 .PHONY: run/frontend
 run/frontend:

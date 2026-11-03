@@ -10,7 +10,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/lewisdalwin/gatekeeper/internal/data"
+	"github.com/aoideee/cmps4191-imagelab-v3/internal/data"
 	_ "github.com/lib/pq"
 )
 
