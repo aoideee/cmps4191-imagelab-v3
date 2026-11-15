@@ -1,0 +1,41 @@
+{
+  "run_id": "A-sse-1",
+  "condition": "A",
+  "mode": "sse",
+  "repetition": 1,
+  "job_id": "3558bdd8-92aa-45ab-92ba-e5e36d64a858",
+  "image": "images (2).jpeg",
+  "observation_gets": 0,
+  "sse_stream_gets": 1,
+  "job_events_received": 5,
+  "versions_list": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "version_timeline": [
+    {
+      "version": 1,
+      "epoch_ms": 1794722649990
+    },
+    {
+      "version": 2,
+      "epoch_ms": 1794722650228
+    },
+    {
+      "version": 3,
+      "epoch_ms": 1794722680254
+    },
+    {
+      "version": 4,
+      "epoch_ms": 1794722680304
+    },
+    {
+      "version": 5,
+      "epoch_ms": 1794722680357
+    }
+  ],
+  "terminal_receipt_epoch_ms": 1794722680357
+}

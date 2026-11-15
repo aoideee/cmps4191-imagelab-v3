@@ -145,6 +145,7 @@ function freshMetrics() {
     sseStreamGets: 0,
     jobEventsReceived: 0,
     versionsReceived: [],
+    versionTimeline: [],
     completionObservedAt: null,
   };
 }
@@ -351,10 +352,15 @@ function acceptSnapshot(snapshot, statusUrl, receivedAt, logDetails) {
 
   const versions = new Set(state.metrics.versionsReceived);
   versions.add(snapshot.version);
+  const timeline = [...state.metrics.versionTimeline];
+  if (timeline.length === 0 || timeline[timeline.length - 1].version !== snapshot.version) {
+    timeline.push({ version: snapshot.version, epoch_ms: receivedAt });
+  }
   const mergedJob = { ...snapshot, status_url: statusUrl };
   const metrics = {
     ...state.metrics,
     versionsReceived: [...versions].sort((a, b) => a - b),
+    versionTimeline: timeline,
     completionObservedAt:
       snapshot.status === "completed"
         ? receivedAt
@@ -377,6 +383,7 @@ function acceptSnapshot(snapshot, statusUrl, receivedAt, logDetails) {
   if (isTerminal(snapshot.status)) {
     console.table([buildMeasurement(mergedJob, metrics)]);
     stopObservation(false);
+    downloadRunLog(mergedJob, metrics, state.selectedFile, receivedAt);
   }
 }
 
@@ -399,4 +406,47 @@ function delay(ms, signal, onTimer) {
 
     signal.addEventListener("abort", onAbort, { once: true });
   });
+}
+
+function downloadRunLog(job, metrics, file, terminalReceiptMs) {
+  const mode = getState().observationMode === "sse" ? "sse" : "long_poll";
+  const meta = window.EXPERIMENT_META || {};
+  const defaultId = meta.condition
+    ? `${meta.condition}-${mode}-${meta.repetition ?? 1}`
+    : `A-${mode}-1`;
+
+  const runId = window.prompt(
+    "Enter run ID for this completed run (e.g., A-sse-1):",
+    defaultId,
+  );
+  if (!runId) return; // Cancel skips download for casual non-experiment runs
+
+  const [cond = "", , repStr = "1"] = runId.split("-");
+  const record = {
+    run_id: runId,
+    condition: meta.condition || cond,
+    mode,
+    repetition: Number(meta.repetition || repStr) || 1,
+    job_id: job.job_id ?? job.id,
+    image: file?.name ?? "unknown",
+    // Keep polling GETs and SSE stream GETs strictly separate per MEAS-05
+    observation_gets: mode === "sse" ? 0 : metrics.pollingCount,
+    sse_stream_gets: mode === "sse" ? metrics.sseStreamGets : 0,
+    job_events_received: metrics.jobEventsReceived,
+    versions_list: metrics.versionsReceived,
+    version_timeline: metrics.versionTimeline,
+    terminal_receipt_epoch_ms: terminalReceiptMs,
+  };
+
+  const blob = new Blob([JSON.stringify(record, null, 2) + "\n"], {
+    type: "application/json",
+  });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${runId}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

@@ -1,0 +1,41 @@
+{
+  "run_id": "A-long_poll-3",
+  "condition": "A",
+  "mode": "long_poll",
+  "repetition": 3,
+  "job_id": "dc8c16a8-ba97-4a92-a87c-64d131ba61ad",
+  "image": "images (2).jpeg",
+  "observation_gets": 6,
+  "sse_stream_gets": 0,
+  "job_events_received": 0,
+  "versions_list": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "version_timeline": [
+    {
+      "version": 1,
+      "epoch_ms": 1794722881433
+    },
+    {
+      "version": 2,
+      "epoch_ms": 1794722881483
+    },
+    {
+      "version": 3,
+      "epoch_ms": 1794722911521
+    },
+    {
+      "version": 4,
+      "epoch_ms": 1794722911599
+    },
+    {
+      "version": 5,
+      "epoch_ms": 1794722911665
+    }
+  ],
+  "terminal_receipt_epoch_ms": 1794722911665
+}

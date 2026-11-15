@@ -1,0 +1,266 @@
+{
+  "run_id": "B-long_poll-3",
+  "condition": "B",
+  "mode": "long_poll",
+  "repetition": 3,
+  "job_id": "27240859-9c82-4f66-bffa-cfa9f0a9c8cb",
+  "image": "images (2).jpeg",
+  "observation_gets": 50,
+  "sse_stream_gets": 0,
+  "job_events_received": 0,
+  "versions_list": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    53,
+    55
+  ],
+  "version_timeline": [
+    {
+      "version": 2,
+      "epoch_ms": 1794714755112
+    },
+    {
+      "version": 3,
+      "epoch_ms": 1794714755334
+    },
+    {
+      "version": 4,
+      "epoch_ms": 1794714755553
+    },
+    {
+      "version": 5,
+      "epoch_ms": 1794714755761
+    },
+    {
+      "version": 6,
+      "epoch_ms": 1794714755970
+    },
+    {
+      "version": 7,
+      "epoch_ms": 1794714756179
+    },
+    {
+      "version": 8,
+      "epoch_ms": 1794714756387
+    },
+    {
+      "version": 9,
+      "epoch_ms": 1794714756596
+    },
+    {
+      "version": 10,
+      "epoch_ms": 1794714756804
+    },
+    {
+      "version": 11,
+      "epoch_ms": 1794714757013
+    },
+    {
+      "version": 12,
+      "epoch_ms": 1794714757221
+    },
+    {
+      "version": 13,
+      "epoch_ms": 1794714757430
+    },
+    {
+      "version": 14,
+      "epoch_ms": 1794714757639
+    },
+    {
+      "version": 15,
+      "epoch_ms": 1794714757847
+    },
+    {
+      "version": 16,
+      "epoch_ms": 1794714758055
+    },
+    {
+      "version": 17,
+      "epoch_ms": 1794714758264
+    },
+    {
+      "version": 18,
+      "epoch_ms": 1794714758472
+    },
+    {
+      "version": 19,
+      "epoch_ms": 1794714758681
+    },
+    {
+      "version": 21,
+      "epoch_ms": 1794714758890
+    },
+    {
+      "version": 22,
+      "epoch_ms": 1794714759099
+    },
+    {
+      "version": 23,
+      "epoch_ms": 1794714759308
+    },
+    {
+      "version": 24,
+      "epoch_ms": 1794714759520
+    },
+    {
+      "version": 25,
+      "epoch_ms": 1794714759730
+    },
+    {
+      "version": 26,
+      "epoch_ms": 1794714759939
+    },
+    {
+      "version": 27,
+      "epoch_ms": 1794714760149
+    },
+    {
+      "version": 28,
+      "epoch_ms": 1794714760357
+    },
+    {
+      "version": 29,
+      "epoch_ms": 1794714760566
+    },
+    {
+      "version": 30,
+      "epoch_ms": 1794714760775
+    },
+    {
+      "version": 31,
+      "epoch_ms": 1794714760983
+    },
+    {
+      "version": 32,
+      "epoch_ms": 1794714761192
+    },
+    {
+      "version": 33,
+      "epoch_ms": 1794714761401
+    },
+    {
+      "version": 34,
+      "epoch_ms": 1794714761610
+    },
+    {
+      "version": 35,
+      "epoch_ms": 1794714761818
+    },
+    {
+      "version": 36,
+      "epoch_ms": 1794714762027
+    },
+    {
+      "version": 37,
+      "epoch_ms": 1794714762236
+    },
+    {
+      "version": 38,
+      "epoch_ms": 1794714762445
+    },
+    {
+      "version": 39,
+      "epoch_ms": 1794714762655
+    },
+    {
+      "version": 40,
+      "epoch_ms": 1794714762865
+    },
+    {
+      "version": 41,
+      "epoch_ms": 1794714763074
+    },
+    {
+      "version": 43,
+      "epoch_ms": 1794714763284
+    },
+    {
+      "version": 44,
+      "epoch_ms": 1794714763493
+    },
+    {
+      "version": 45,
+      "epoch_ms": 1794714763702
+    },
+    {
+      "version": 46,
+      "epoch_ms": 1794714763911
+    },
+    {
+      "version": 47,
+      "epoch_ms": 1794714764120
+    },
+    {
+      "version": 48,
+      "epoch_ms": 1794714764329
+    },
+    {
+      "version": 49,
+      "epoch_ms": 1794714764537
+    },
+    {
+      "version": 50,
+      "epoch_ms": 1794714764745
+    },
+    {
+      "version": 51,
+      "epoch_ms": 1794714764954
+    },
+    {
+      "version": 53,
+      "epoch_ms": 1794714765162
+    },
+    {
+      "version": 55,
+      "epoch_ms": 1794714765370
+    }
+  ],
+  "terminal_receipt_epoch_ms": 1794714765370
+}
